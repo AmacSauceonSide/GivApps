@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		CB86041F1F2031A700041FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86041E1F2031A700041FDF /* AppDelegate.swift */; };
-		CB8604211F2031A700041FDF /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8604201F2031A700041FDF /* FirstViewController.swift */; };
-		CB8604231F2031A700041FDF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8604221F2031A700041FDF /* SecondViewController.swift */; };
 		CB8604261F2031A700041FDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB8604241F2031A700041FDF /* Main.storyboard */; };
 		CB8604281F2031A700041FDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB8604271F2031A700041FDF /* Assets.xcassets */; };
 		CB86042B1F2031A700041FDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB8604291F2031A700041FDF /* LaunchScreen.storyboard */; };
 		CB8604361F2031A700041FDF /* GivDappsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8604351F2031A700041FDF /* GivDappsTests.swift */; };
 		CB8604411F2031A700041FDF /* GivDappsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8604401F2031A700041FDF /* GivDappsUITests.swift */; };
+		CB86044F1F20328300041FDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86044E1F20328300041FDF /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +36,6 @@
 /* Begin PBXFileReference section */
 		CB86041B1F2031A700041FDF /* GivDapps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GivDapps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB86041E1F2031A700041FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CB8604201F2031A700041FDF /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		CB8604221F2031A700041FDF /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		CB8604251F2031A700041FDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB8604271F2031A700041FDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB86042A1F2031A700041FDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +46,7 @@
 		CB86043C1F2031A700041FDF /* GivDappsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GivDappsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB8604401F2031A700041FDF /* GivDappsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GivDappsUITests.swift; sourceTree = "<group>"; };
 		CB8604421F2031A700041FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB86044E1F20328300041FDF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				CB86041E1F2031A700041FDF /* AppDelegate.swift */,
-				CB8604201F2031A700041FDF /* FirstViewController.swift */,
-				CB8604221F2031A700041FDF /* SecondViewController.swift */,
+				CB86044E1F20328300041FDF /* ViewController.swift */,
 				CB8604241F2031A700041FDF /* Main.storyboard */,
 				CB8604271F2031A700041FDF /* Assets.xcassets */,
 				CB8604291F2031A700041FDF /* LaunchScreen.storyboard */,
@@ -265,9 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB8604231F2031A700041FDF /* SecondViewController.swift in Sources */,
+				CB86044F1F20328300041FDF /* ViewController.swift in Sources */,
 				CB86041F1F2031A700041FDF /* AppDelegate.swift in Sources */,
-				CB8604211F2031A700041FDF /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
