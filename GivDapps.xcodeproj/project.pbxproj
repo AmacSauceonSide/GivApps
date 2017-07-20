@@ -14,6 +14,7 @@
 		CB8604361F2031A700041FDF /* GivDappsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8604351F2031A700041FDF /* GivDappsTests.swift */; };
 		CB8604411F2031A700041FDF /* GivDappsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8604401F2031A700041FDF /* GivDappsUITests.swift */; };
 		CB86044F1F20328300041FDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86044E1F20328300041FDF /* ViewController.swift */; };
+		CB8604511F203C2400041FDF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8604501F203C2400041FDF /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		CB8604401F2031A700041FDF /* GivDappsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GivDappsUITests.swift; sourceTree = "<group>"; };
 		CB8604421F2031A700041FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB86044E1F20328300041FDF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CB8604501F203C2400041FDF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				CB8604271F2031A700041FDF /* Assets.xcassets */,
 				CB8604291F2031A700041FDF /* LaunchScreen.storyboard */,
 				CB86042C1F2031A700041FDF /* Info.plist */,
+				CB8604501F203C2400041FDF /* SignUpViewController.swift */,
 			);
 			path = GivDapps;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB8604511F203C2400041FDF /* SignUpViewController.swift in Sources */,
 				CB86044F1F20328300041FDF /* ViewController.swift in Sources */,
 				CB86041F1F2031A700041FDF /* AppDelegate.swift in Sources */,
 			);
