@@ -71,6 +71,9 @@
                                 <state key="normal" title="Forgot Password?">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="eMK-7g-lae" kind="show" id="kbW-x4-MKF"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="P3i-7B-DJn">
                                 <rect key="frame" x="122" y="79" width="130" height="130"/>
@@ -298,13 +301,27 @@
                                             <action selector="addProfilePic:" destination="aDW-Zw-eVw" eventType="touchUpInside" id="ICD-aH-6hz"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7i-uG-tjA">
+                                        <rect key="frame" x="95" y="570" width="185" height="30"/>
+                                        <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
+                                        <state key="normal" title="Already have an account?">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="alreadyHaveAccount:" destination="aDW-Zw-eVw" eventType="touchUpInside" id="6Ax-FF-5rI"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="gcS-Fl-FrW" firstAttribute="centerY" secondItem="7e0-dF-Vda" secondAttribute="centerY" id="3Rt-Ff-DEH"/>
                                     <constraint firstAttribute="trailing" secondItem="gcS-Fl-FrW" secondAttribute="trailing" constant="16" id="5xZ-GX-7yM"/>
+                                    <constraint firstAttribute="bottom" secondItem="A7i-uG-tjA" secondAttribute="bottom" constant="67" id="8Tp-Q5-T6o"/>
+                                    <constraint firstItem="A7i-uG-tjA" firstAttribute="top" secondItem="B1S-iW-O8v" secondAttribute="bottom" constant="24" id="Ffz-X4-Fpm"/>
                                     <constraint firstItem="XKH-uJ-zbd" firstAttribute="top" secondItem="7e0-dF-Vda" secondAttribute="top" constant="56" id="I9B-ro-Jd6"/>
+                                    <constraint firstItem="A7i-uG-tjA" firstAttribute="centerX" secondItem="gcS-Fl-FrW" secondAttribute="centerX" id="Qzc-zh-Ojg"/>
                                     <constraint firstItem="gcS-Fl-FrW" firstAttribute="leading" secondItem="7e0-dF-Vda" secondAttribute="leading" constant="16" id="RnI-rg-Waz"/>
                                     <constraint firstAttribute="bottom" secondItem="gcS-Fl-FrW" secondAttribute="bottom" constant="121" id="cdJ-b5-YHt"/>
+                                    <constraint firstItem="A7i-uG-tjA" firstAttribute="leading" secondItem="7e0-dF-Vda" secondAttribute="leading" constant="95" id="d5l-3j-icR"/>
                                     <constraint firstItem="XKH-uJ-zbd" firstAttribute="centerX" secondItem="gcS-Fl-FrW" secondAttribute="centerX" id="dnU-Fa-e7S"/>
                                     <constraint firstItem="XKH-uJ-zbd" firstAttribute="centerY" secondItem="7e0-dF-Vda" secondAttribute="centerY" constant="-216.5" id="eI1-PE-VaZ"/>
                                     <constraint firstItem="dpz-Q7-WDB" firstAttribute="centerY" secondItem="XKH-uJ-zbd" secondAttribute="centerY" id="eVT-Pt-GEr"/>
@@ -337,7 +354,100 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WU8-ea-9Tl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1809" y="27"/>
+            <point key="canvasLocation" x="1839" y="-279"/>
+        </scene>
+        <!--Forgot Password View Controller-->
+        <scene sceneID="0QD-RF-3nC">
+            <objects>
+                <viewController id="eMK-7g-lae" customClass="ForgotPasswordViewController" customModule="GivDapps" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0dX-or-Q4L"/>
+                        <viewControllerLayoutGuide type="bottom" id="XEQ-Rc-T3v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Qr-aY-rn4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_background" translatesAutoresizingMaskIntoConstraints="NO" id="0Xh-mG-wy5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="EsG-XR-Cki">
+                                <rect key="frame" x="122" y="79" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="Fxh-94-ajm"/>
+                                    <constraint firstAttribute="width" constant="130" id="fs2-A0-Bwy"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="746" image="GivDappsLetters" translatesAutoresizingMaskIntoConstraints="NO" id="Ogp-Jv-FnX">
+                                <rect key="frame" x="67" y="235" width="240" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ctm-n2-xIh"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZt-9n-HDY">
+                                <rect key="frame" x="16" y="401" width="343" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="M9P-yb-SH8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
+                                <state key="normal" title="Get New Password" backgroundImage="done_button_rectangle-1">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="56R-Ar-A7X">
+                                <rect key="frame" x="16" y="353" width="343" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="747" text="Welcome Back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obY-OA-UvI">
+                                <rect key="frame" x="113" y="323" width="148" height="21"/>
+                                <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will receive an email with a link to reset your password. Follow the steps to complete the password reset." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odW-Bn-ftQ">
+                                <rect key="frame" x="16" y="471" width="343" height="78"/>
+                                <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ogp-Jv-FnX" firstAttribute="top" secondItem="EsG-XR-Cki" secondAttribute="bottom" constant="26" id="0qd-L7-TCE"/>
+                            <constraint firstItem="EsG-XR-Cki" firstAttribute="top" secondItem="0dX-or-Q4L" secondAttribute="bottom" constant="59" id="3K2-Es-TzD"/>
+                            <constraint firstItem="obY-OA-UvI" firstAttribute="leading" secondItem="5Qr-aY-rn4" secondAttribute="leadingMargin" constant="97" id="6n2-3r-WaE"/>
+                            <constraint firstItem="0Xh-mG-wy5" firstAttribute="centerY" secondItem="5Qr-aY-rn4" secondAttribute="centerY" id="7Ma-q5-GcN"/>
+                            <constraint firstItem="PZt-9n-HDY" firstAttribute="leading" secondItem="5Qr-aY-rn4" secondAttribute="leadingMargin" id="8T2-y4-5fg"/>
+                            <constraint firstItem="PZt-9n-HDY" firstAttribute="top" secondItem="56R-Ar-A7X" secondAttribute="bottom" constant="8" id="98T-Zw-jYu"/>
+                            <constraint firstItem="odW-Bn-ftQ" firstAttribute="top" secondItem="PZt-9n-HDY" secondAttribute="bottom" constant="32" id="DI9-An-cno"/>
+                            <constraint firstItem="Ogp-Jv-FnX" firstAttribute="centerX" secondItem="EsG-XR-Cki" secondAttribute="centerX" id="IZ1-7g-aWj"/>
+                            <constraint firstItem="PZt-9n-HDY" firstAttribute="top" secondItem="56R-Ar-A7X" secondAttribute="bottom" constant="8" symbolic="YES" id="PXf-oA-M5g"/>
+                            <constraint firstItem="obY-OA-UvI" firstAttribute="centerX" secondItem="56R-Ar-A7X" secondAttribute="centerX" id="R4L-yX-FiL"/>
+                            <constraint firstItem="obY-OA-UvI" firstAttribute="centerY" secondItem="0Xh-mG-wy5" secondAttribute="centerY" id="Uvp-T5-th1"/>
+                            <constraint firstItem="PZt-9n-HDY" firstAttribute="centerX" secondItem="0Xh-mG-wy5" secondAttribute="centerX" id="YsT-UG-tqD"/>
+                            <constraint firstItem="0Xh-mG-wy5" firstAttribute="centerX" secondItem="5Qr-aY-rn4" secondAttribute="centerX" id="cN5-2C-PHn"/>
+                            <constraint firstItem="PZt-9n-HDY" firstAttribute="leading" secondItem="56R-Ar-A7X" secondAttribute="leading" id="dGp-pJ-ymJ"/>
+                            <constraint firstAttribute="bottom" secondItem="PZt-9n-HDY" secondAttribute="bottom" constant="228" id="fEz-1H-lK3"/>
+                            <constraint firstItem="odW-Bn-ftQ" firstAttribute="trailing" secondItem="PZt-9n-HDY" secondAttribute="trailing" id="jOV-sH-7og"/>
+                            <constraint firstItem="PZt-9n-HDY" firstAttribute="trailing" secondItem="56R-Ar-A7X" secondAttribute="trailing" id="jQd-3o-1Gh"/>
+                            <constraint firstItem="PZt-9n-HDY" firstAttribute="top" secondItem="56R-Ar-A7X" secondAttribute="bottom" constant="8" id="nVc-AM-0uB"/>
+                            <constraint firstItem="0Xh-mG-wy5" firstAttribute="height" secondItem="5Qr-aY-rn4" secondAttribute="height" id="nnN-dw-SOG"/>
+                            <constraint firstItem="obY-OA-UvI" firstAttribute="centerX" secondItem="Ogp-Jv-FnX" secondAttribute="centerX" id="pvK-6y-u69"/>
+                            <constraint firstItem="0Xh-mG-wy5" firstAttribute="width" secondItem="5Qr-aY-rn4" secondAttribute="width" id="s2n-bT-K04"/>
+                            <constraint firstItem="Ogp-Jv-FnX" firstAttribute="leading" secondItem="5Qr-aY-rn4" secondAttribute="leadingMargin" constant="51" id="vKb-Om-wKp"/>
+                            <constraint firstItem="XEQ-Rc-T3v" firstAttribute="top" secondItem="odW-Bn-ftQ" secondAttribute="bottom" constant="118" id="vi7-jz-CsB"/>
+                            <constraint firstItem="obY-OA-UvI" firstAttribute="top" secondItem="Ogp-Jv-FnX" secondAttribute="bottom" constant="38" id="xp3-ky-fkT"/>
+                            <constraint firstItem="56R-Ar-A7X" firstAttribute="top" secondItem="obY-OA-UvI" secondAttribute="bottom" constant="9" id="yIx-3F-qtK"/>
+                            <constraint firstItem="odW-Bn-ftQ" firstAttribute="leading" secondItem="PZt-9n-HDY" secondAttribute="leading" id="ySZ-rr-7G8"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CHe-VB-4Wj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1837.5999999999999" y="363.86806596701655"/>
         </scene>
     </scenes>
     <resources>

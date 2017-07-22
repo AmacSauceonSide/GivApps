@@ -76,6 +76,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
         
     }
     
+    @IBAction func alreadyHaveAccount(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     /*  Custom Functions - Start */
     
     //  Function to allo the user to show the picture
