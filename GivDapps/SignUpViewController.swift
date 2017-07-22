@@ -8,11 +8,11 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate{
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -20,8 +20,9 @@ class SignUpViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
-    
+    //  UITextFields.
     @IBOutlet weak var firstNameTF: UITextField!
     
     @IBOutlet weak var lastNameTF: UITextField!
@@ -30,19 +31,141 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var passwordTF: UITextField!
     
+    //  ScrollView to adjust the view when typing requires it.
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var innerView: UIView!
+    
+    //  Action to add a profile pic when the plus symbol is tapped on.
     @IBAction func addProfilePic(_ sender: UIButton) {
+        
     }
     
     
+    //  Function to check that all fields are completed.
+    func completedFields() -> Bool{
+        
+        //  Variable to return either true or false based on the logic.
+        var allFieldsCompleted:Bool = false
+        
+        //  Variable keeping track of emtpy fields.
+        var numberOfEmptyFields:Int = 0
+        
+        //  Loop for every field in the innerView.
+        for field  in self.innerView.subviews {
+            
+            //  Current field is a UITextField
+            if let textField = field as? UITextField{
+                
+                //  Check wether UITextField is empty or not.
+                let emptyField:Bool = (textField.text?.isEmpty)!
+                
+                //  Switch based on the boolean value.
+                switch emptyField {
+                   //   If there is an empty UITextField then add one to the numberOfEmptyFields.
+                case true:
+                    
+                    numberOfEmptyFields += 1
+                    
+                default:
+                    print()
+                }
+                
+            }
+            
+        }
+        
+        //  If all textfields were completed, set allFieldsCompleted to true.
+        if(numberOfEmptyFields <= 0){
+            allFieldsCompleted = true
+        }
+        
+        return allFieldsCompleted
+    }
+    
+    //  User taps on the Done button.
+    @IBAction func done(_ sender: UIButton) {
+        
+        //  If all fields were completed grant access to the next step.
+        
+        if completedFields(){
+            print("\nAll fields completed\n")
+        }
+        //  Else alert the user.
+        else{
+            
+            let alert = UIAlertController(title: "Incomplete Fields", message: "Make sure you fill out every field.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title:"OK", style: .cancel, handler:{ (UIAlertAction) in
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+
+        }
+        
+    }
+    
+    
+    //  Function to remove the keyboard if the user taps on Remove button. 
+    func doneClicking(){
+        view.endEditing(true)
+    }
+    
+    
+    //  Function to readjust the view if the keyboard covers the current UITextField.
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        switch textField {
+            case emailTF:
+                self.scrollView.setContentOffset(CGPoint(x:0, y:250) , animated: true)
+            
+            case passwordTF:
+                
+                self.scrollView.setContentOffset(CGPoint(x:0, y:250) , animated: true)
+            
+            default:
+                print()
+        }
+        
+    }
+    
+    //  Function to readjust the view if the user ends editing the current UITextField.
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        scrollView.setContentOffset(CGPoint(x:0, y:0), animated: true)
+    }
+    
+    //  Function to go to the next UITextField whenver the Next button is available on the keyboard.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        // Increment the tag of UITextField by 1.
+        if let nextTextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextTextField.becomeFirstResponder()
+        }
+        else {
+            // Remove keyboard.
+            textField.resignFirstResponder()
+        }
+        
+        return false
+        
+    }
+    
+    //  Function to remove the keyboard if the user clicks elsewhere/outside of the UITextField.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        self.view.endEditing(true)
+        
+    }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 
 }
