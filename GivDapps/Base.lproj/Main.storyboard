@@ -1,14 +1,146 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aDW-Zw-eVw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wbk-9a-Buy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Sign In View Controller-->
+        <scene sceneID="J00-lR-oM1">
+            <objects>
+                <viewController id="wbk-9a-Buy" customClass="SignInViewController" customModule="GivDapps" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bO4-gD-Pn9"/>
+                        <viewControllerLayoutGuide type="bottom" id="5UX-Qc-4Iz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SjX-QU-0fb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_background" translatesAutoresizingMaskIntoConstraints="NO" id="nFN-ir-mRo">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tdi-au-pOo">
+                                <rect key="frame" x="16" y="353" width="343" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q5q-Ne-BKu">
+                                <rect key="frame" x="16" y="403" width="343" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fGi-ru-Jiz"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="746" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ju8-jN-MBN">
+                                <rect key="frame" x="16" y="454" width="343" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="ziY-sE-pAX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
+                                <state key="normal" title="Sign in" backgroundImage="done_button_rectangle-1">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="747" text="Welcome Back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1RY-sg-os2">
+                                <rect key="frame" x="113" y="323" width="148" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="PU9-Nl-qwZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipo-mT-3Nd">
+                                <rect key="frame" x="118" y="497" width="139" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="139" id="IQG-Zg-2la"/>
+                                    <constraint firstAttribute="height" constant="30" id="z6P-LV-PeV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
+                                <state key="normal" title="Forgot Password?">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="P3i-7B-DJn">
+                                <rect key="frame" x="122" y="79" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="IsS-34-4cZ"/>
+                                    <constraint firstAttribute="height" constant="130" id="kVN-3n-LBf"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GivDappsLetters" translatesAutoresizingMaskIntoConstraints="NO" id="SX6-4M-S3a">
+                                <rect key="frame" x="67" y="224" width="240" height="50"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- OR -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bb3-qt-iM4">
+                                <rect key="frame" x="169" y="535" width="38" height="24"/>
+                                <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSj-pZ-vpH">
+                                <rect key="frame" x="16" y="564" width="343" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="u4B-3I-NYX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
+                                <state key="normal" title="Sign up" backgroundImage="done_button_rectangle-1">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="aDW-Zw-eVw" kind="show" id="sPL-mG-xb2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nFN-ir-mRo" firstAttribute="centerX" secondItem="SjX-QU-0fb" secondAttribute="centerX" id="3I4-tz-fDp"/>
+                            <constraint firstItem="q5q-Ne-BKu" firstAttribute="leading" secondItem="Ju8-jN-MBN" secondAttribute="leading" id="3Z7-fA-Or6"/>
+                            <constraint firstItem="SX6-4M-S3a" firstAttribute="centerX" secondItem="1RY-sg-os2" secondAttribute="centerX" id="7Hj-xU-Ydi"/>
+                            <constraint firstItem="Ipo-mT-3Nd" firstAttribute="centerX" secondItem="nFN-ir-mRo" secondAttribute="centerX" id="7uX-xI-n5b"/>
+                            <constraint firstItem="SX6-4M-S3a" firstAttribute="top" secondItem="P3i-7B-DJn" secondAttribute="bottom" constant="15" id="DCe-Xf-LA3"/>
+                            <constraint firstItem="Bb3-qt-iM4" firstAttribute="top" secondItem="Ipo-mT-3Nd" secondAttribute="bottom" constant="8" id="DsB-DM-Qgs"/>
+                            <constraint firstAttribute="bottom" secondItem="Ipo-mT-3Nd" secondAttribute="bottom" constant="140" id="Fnr-Ab-fyh"/>
+                            <constraint firstItem="q5q-Ne-BKu" firstAttribute="top" secondItem="tdi-au-pOo" secondAttribute="bottom" constant="10" id="FpU-PT-aJE"/>
+                            <constraint firstItem="wSj-pZ-vpH" firstAttribute="leading" secondItem="SjX-QU-0fb" secondAttribute="leadingMargin" id="GLb-bf-zUS"/>
+                            <constraint firstItem="P3i-7B-DJn" firstAttribute="top" secondItem="bO4-gD-Pn9" secondAttribute="bottom" constant="59" id="ItL-xj-6l9"/>
+                            <constraint firstItem="nFN-ir-mRo" firstAttribute="height" secondItem="SjX-QU-0fb" secondAttribute="height" id="Nf9-VB-xOq"/>
+                            <constraint firstItem="Ju8-jN-MBN" firstAttribute="trailing" secondItem="wSj-pZ-vpH" secondAttribute="trailing" id="Q6r-xu-2cT"/>
+                            <constraint firstItem="nFN-ir-mRo" firstAttribute="width" secondItem="SjX-QU-0fb" secondAttribute="width" id="Q8G-k1-jN2"/>
+                            <constraint firstItem="SX6-4M-S3a" firstAttribute="centerX" secondItem="P3i-7B-DJn" secondAttribute="centerX" id="QUb-dz-XDI"/>
+                            <constraint firstItem="1RY-sg-os2" firstAttribute="centerY" secondItem="nFN-ir-mRo" secondAttribute="centerY" id="SxY-Z5-hZ4"/>
+                            <constraint firstItem="wSj-pZ-vpH" firstAttribute="top" secondItem="Bb3-qt-iM4" secondAttribute="bottom" constant="5" id="Wev-s7-RaH"/>
+                            <constraint firstItem="Ipo-mT-3Nd" firstAttribute="centerX" secondItem="tdi-au-pOo" secondAttribute="centerX" id="aGB-2J-3vP"/>
+                            <constraint firstItem="q5q-Ne-BKu" firstAttribute="leading" secondItem="tdi-au-pOo" secondAttribute="leading" id="aHK-pK-Fz8"/>
+                            <constraint firstItem="q5q-Ne-BKu" firstAttribute="trailing" secondItem="Ju8-jN-MBN" secondAttribute="trailing" id="bb0-mg-HLI"/>
+                            <constraint firstItem="1RY-sg-os2" firstAttribute="centerX" secondItem="tdi-au-pOo" secondAttribute="centerX" id="dCa-tH-tBb"/>
+                            <constraint firstItem="1RY-sg-os2" firstAttribute="leading" secondItem="SjX-QU-0fb" secondAttribute="leadingMargin" constant="97" id="dfM-EV-hQz"/>
+                            <constraint firstItem="Ipo-mT-3Nd" firstAttribute="top" secondItem="Ju8-jN-MBN" secondAttribute="bottom" constant="5" id="eKR-rC-krh"/>
+                            <constraint firstItem="SX6-4M-S3a" firstAttribute="leading" secondItem="SjX-QU-0fb" secondAttribute="leadingMargin" constant="51" id="gwg-Cv-Afn"/>
+                            <constraint firstItem="Ju8-jN-MBN" firstAttribute="top" secondItem="q5q-Ne-BKu" secondAttribute="bottom" constant="11" id="hBi-OZ-kQ0"/>
+                            <constraint firstItem="q5q-Ne-BKu" firstAttribute="trailing" secondItem="tdi-au-pOo" secondAttribute="trailing" id="hlW-sT-1ob"/>
+                            <constraint firstItem="tdi-au-pOo" firstAttribute="top" secondItem="1RY-sg-os2" secondAttribute="bottom" constant="9" id="kD5-KT-s8K"/>
+                            <constraint firstItem="Ipo-mT-3Nd" firstAttribute="centerX" secondItem="Bb3-qt-iM4" secondAttribute="centerX" id="lty-IS-N2P"/>
+                            <constraint firstItem="nFN-ir-mRo" firstAttribute="centerY" secondItem="SjX-QU-0fb" secondAttribute="centerY" id="o53-ZX-19y"/>
+                            <constraint firstItem="wSj-pZ-vpH" firstAttribute="leading" secondItem="tdi-au-pOo" secondAttribute="leading" id="sIr-VW-3n0"/>
+                            <constraint firstItem="1RY-sg-os2" firstAttribute="top" secondItem="SX6-4M-S3a" secondAttribute="bottom" constant="49" id="xh3-Bv-PoZ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zqh-Bq-HLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1055" y="27"/>
+        </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="m5U-bM-YXV">
             <objects>
@@ -21,7 +153,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-2" translatesAutoresizingMaskIntoConstraints="NO" id="O3D-zN-Lss">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_background" translatesAutoresizingMaskIntoConstraints="NO" id="O3D-zN-Lss">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7e0-dF-Vda">
@@ -205,13 +337,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WU8-ea-9Tl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042.4000000000001" y="46.326836581709152"/>
+            <point key="canvasLocation" x="1809" y="27"/>
         </scene>
     </scenes>
     <resources>
+        <image name="GivDappsLetters" width="434" height="92"/>
         <image name="add_symbol" width="81" height="83"/>
-        <image name="background-2" width="750" height="1334"/>
         <image name="blank_profile_pic" width="387" height="385"/>
+        <image name="default_background" width="750" height="1334"/>
         <image name="done_button_rectangle-1" width="665" height="88"/>
+        <image name="logo" width="315" height="315"/>
     </resources>
 </document>
