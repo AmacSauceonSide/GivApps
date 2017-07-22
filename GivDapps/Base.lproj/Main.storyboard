@@ -413,6 +413,19 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DfC-b0-ERN">
+                                <rect key="frame" x="16" y="617" width="73" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="NGA-mU-qgN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancel:" destination="eMK-7g-lae" eventType="touchUpInside" id="Upp-Ca-V0H"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -423,11 +436,14 @@
                             <constraint firstItem="PZt-9n-HDY" firstAttribute="leading" secondItem="5Qr-aY-rn4" secondAttribute="leadingMargin" id="8T2-y4-5fg"/>
                             <constraint firstItem="PZt-9n-HDY" firstAttribute="top" secondItem="56R-Ar-A7X" secondAttribute="bottom" constant="8" id="98T-Zw-jYu"/>
                             <constraint firstItem="odW-Bn-ftQ" firstAttribute="top" secondItem="PZt-9n-HDY" secondAttribute="bottom" constant="32" id="DI9-An-cno"/>
+                            <constraint firstItem="DfC-b0-ERN" firstAttribute="leading" secondItem="odW-Bn-ftQ" secondAttribute="leading" id="DaE-cs-A79"/>
                             <constraint firstItem="Ogp-Jv-FnX" firstAttribute="centerX" secondItem="EsG-XR-Cki" secondAttribute="centerX" id="IZ1-7g-aWj"/>
                             <constraint firstItem="PZt-9n-HDY" firstAttribute="top" secondItem="56R-Ar-A7X" secondAttribute="bottom" constant="8" symbolic="YES" id="PXf-oA-M5g"/>
                             <constraint firstItem="obY-OA-UvI" firstAttribute="centerX" secondItem="56R-Ar-A7X" secondAttribute="centerX" id="R4L-yX-FiL"/>
                             <constraint firstItem="obY-OA-UvI" firstAttribute="centerY" secondItem="0Xh-mG-wy5" secondAttribute="centerY" id="Uvp-T5-th1"/>
+                            <constraint firstItem="XEQ-Rc-T3v" firstAttribute="top" secondItem="DfC-b0-ERN" secondAttribute="bottom" constant="20" id="WgX-fV-3Zq"/>
                             <constraint firstItem="PZt-9n-HDY" firstAttribute="centerX" secondItem="0Xh-mG-wy5" secondAttribute="centerX" id="YsT-UG-tqD"/>
+                            <constraint firstItem="DfC-b0-ERN" firstAttribute="top" secondItem="odW-Bn-ftQ" secondAttribute="bottom" constant="68" id="Zi5-2C-Amx"/>
                             <constraint firstItem="0Xh-mG-wy5" firstAttribute="centerX" secondItem="5Qr-aY-rn4" secondAttribute="centerX" id="cN5-2C-PHn"/>
                             <constraint firstItem="PZt-9n-HDY" firstAttribute="leading" secondItem="56R-Ar-A7X" secondAttribute="leading" id="dGp-pJ-ymJ"/>
                             <constraint firstAttribute="bottom" secondItem="PZt-9n-HDY" secondAttribute="bottom" constant="228" id="fEz-1H-lK3"/>
