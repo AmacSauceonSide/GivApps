@@ -17,6 +17,7 @@
 		CB8604511F203C2400041FDF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8604501F203C2400041FDF /* SignUpViewController.swift */; };
 		CBD475241F230804006E3A08 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD475231F230804006E3A08 /* SignInViewController.swift */; };
 		CBD475261F230F52006E3A08 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD475251F230F52006E3A08 /* ForgotPasswordViewController.swift */; };
+		CBF4B6F71F23E70500114632 /* CampaignsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4B6F61F23E70500114632 /* CampaignsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		CB8604501F203C2400041FDF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CBD475231F230804006E3A08 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		CBD475251F230F52006E3A08 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		CBF4B6F61F23E70500114632 /* CampaignsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				CB8604501F203C2400041FDF /* SignUpViewController.swift */,
 				CBD475231F230804006E3A08 /* SignInViewController.swift */,
 				CBD475251F230F52006E3A08 /* ForgotPasswordViewController.swift */,
+				CBF4B6F61F23E70500114632 /* CampaignsViewController.swift */,
 			);
 			path = GivDapps;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBF4B6F71F23E70500114632 /* CampaignsViewController.swift in Sources */,
 				CBD475241F230804006E3A08 /* SignInViewController.swift in Sources */,
 				CBD475261F230F52006E3A08 /* ForgotPasswordViewController.swift in Sources */,
 				CB8604511F203C2400041FDF /* SignUpViewController.swift in Sources */,
