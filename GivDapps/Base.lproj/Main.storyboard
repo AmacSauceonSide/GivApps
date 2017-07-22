@@ -199,6 +199,7 @@
                         <outlet property="innerView" destination="gcS-Fl-FrW" id="eMx-WQ-dO8"/>
                         <outlet property="lastNameTF" destination="Uum-i9-S1n" id="yIJ-4p-jQ7"/>
                         <outlet property="passwordTF" destination="7qy-73-kn6" id="fv8-9A-R1V"/>
+                        <outlet property="profileImage" destination="XKH-uJ-zbd" id="HTw-nO-9Jy"/>
                         <outlet property="scrollView" destination="7e0-dF-Vda" id="ZEZ-6h-nh6"/>
                     </connections>
                 </viewController>

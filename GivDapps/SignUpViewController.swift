@@ -8,12 +8,13 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, UITextFieldDelegate{
+class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate,UIImagePickerControllerDelegate{
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,13 +35,61 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     //  ScrollView to adjust the view when typing requires it.
     @IBOutlet weak var scrollView: UIScrollView!
     
+    //  Views.
     @IBOutlet weak var innerView: UIView!
+    
+    //  UIImageViews.
+    @IBOutlet weak var profileImage: UIImageView!
     
     //  Action to add a profile pic when the plus symbol is tapped on.
     @IBAction func addProfilePic(_ sender: UIButton) {
+        print("Add image button pressed")
+        let alertController = UIAlertController(title: "Choose image", message: nil, preferredStyle: .actionSheet)
+        
+        alertController.addAction(UIAlertAction(title: "Photos", style: .default, handler: { (action) -> Void in
+            self.showPicker(sourceType: .photoLibrary)
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    //  User taps on the Done button.
+    @IBAction func done(_ sender: UIButton) {
+        
+        //  If all fields were completed grant access to the next step.
+        if completedFields(){
+            print("\nAll fields completed\n")
+        }
+            //  Else alert the user.
+        else{
+            
+            let alert = UIAlertController(title: "Incomplete Fields", message: "Make sure you fill out every field.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title:"OK", style: .cancel, handler:{ (UIAlertAction) in
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        }
         
     }
     
+    /*  Custom Functions - Start */
+    
+    //  Function to allo the user to show the picture
+    func showPicker(sourceType: UIImagePickerControllerSourceType){
+        
+        //  Create an imagePicker to be presented.
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = sourceType
+        imagePicker.allowsEditing = false
+        
+        self.present(imagePicker, animated: true, completion: nil)
+        
+    }
     
     //  Function to check that all fields are completed.
     func completedFields() -> Bool{
@@ -83,30 +132,26 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         return allFieldsCompleted
     }
     
-    //  User taps on the Done button.
-    @IBAction func done(_ sender: UIButton) {
+    /*  Custom Functions - End */
+    
+    
+    /*  Functions from delegates - Start */
+    
+    //  Function to perform operations, such as choosing the profile picture, once an image is selected.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        //  If all fields were completed grant access to the next step.
+        let theInfo:NSDictionary = info as NSDictionary
         
-        if completedFields(){
-            print("\nAll fields completed\n")
-        }
-        //  Else alert the user.
-        else{
-            
-            let alert = UIAlertController(title: "Incomplete Fields", message: "Make sure you fill out every field.", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title:"OK", style: .cancel, handler:{ (UIAlertAction) in
-            }))
-            
-            self.present(alert, animated: true, completion: nil)
-
-        }
+        let img:UIImage = theInfo.object(forKey: UIImagePickerControllerOriginalImage) as! UIImage
         
+        profileImage.image = img
+        
+        self.dismiss(animated: true, completion: { () -> Void in
+            
+        })
     }
-    
-    
-    //  Function to remove the keyboard if the user taps on Remove button. 
+
+    //  Function to remove the keyboard if the user taps on Remove button.
     func doneClicking(){
         view.endEditing(true)
     }
@@ -167,5 +212,5 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
      }
      */
     
-
+    /*  Functions from delegates - End */
 }
