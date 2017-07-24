@@ -551,15 +551,74 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vr8-bR-RXA">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem image="favorite_heart_button" id="iRh-RI-w6h">
+                                        <inset key="imageInsets" minX="0.0" minY="18" maxX="15" maxY="0.0"/>
+                                    </tabBarItem>
+                                    <tabBarItem image="challenge_icon" id="ZIo-Ka-gb8">
+                                        <inset key="imageInsets" minX="0.0" minY="18" maxX="15" maxY="0.0"/>
+                                    </tabBarItem>
+                                </items>
+                            </tabBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1hS-OD-gYc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="31"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="FdO-Kl-yjV"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="s5B-5j-PAz">
+                                    <size key="itemSize" width="130" height="29"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="dss-cB-WWy" customClass="MenuCollectionViewCell" customModule="GivDapps" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="1" width="130" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="29"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTj-zs-Mfg">
+                                                    <rect key="frame" x="8" y="0.0" width="114" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="RTj-zs-Mfg" firstAttribute="trailing" secondItem="dss-cB-WWy" secondAttribute="trailingMargin" id="1VS-EO-hoM"/>
+                                            <constraint firstItem="RTj-zs-Mfg" firstAttribute="leading" secondItem="dss-cB-WWy" secondAttribute="leadingMargin" id="jI9-yw-b5Q"/>
+                                            <constraint firstItem="RTj-zs-Mfg" firstAttribute="top" secondItem="dss-cB-WWy" secondAttribute="top" id="s0I-lf-nr9"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cellButton" destination="RTj-zs-Mfg" id="Hs1-Qk-L39"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="aPn-0Y-Wpy" id="eN9-UW-Wo2"/>
+                                    <outlet property="delegate" destination="aPn-0Y-Wpy" id="vBO-bh-3Ie"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vr8-bR-RXA" firstAttribute="leading" secondItem="BRD-oe-jau" secondAttribute="leading" id="8rY-DV-BeH"/>
+                            <constraint firstItem="vr8-bR-RXA" firstAttribute="trailing" secondItem="BRD-oe-jau" secondAttribute="trailing" id="ATe-0m-qoN"/>
                             <constraint firstItem="BRD-oe-jau" firstAttribute="top" secondItem="l1d-Iq-5JD" secondAttribute="bottom" id="DUX-vW-DcG"/>
                             <constraint firstItem="HAB-cu-At0" firstAttribute="top" secondItem="BRD-oe-jau" secondAttribute="bottom" id="Oh0-iT-gXI"/>
+                            <constraint firstItem="1hS-OD-gYc" firstAttribute="leading" secondItem="HAB-cu-At0" secondAttribute="trailing" constant="10" id="VKv-k9-8RH"/>
                             <constraint firstItem="BRD-oe-jau" firstAttribute="width" secondItem="Hhk-Jh-4OT" secondAttribute="width" id="ZdP-Y1-IB9"/>
                             <constraint firstItem="BRD-oe-jau" firstAttribute="centerX" secondItem="Hhk-Jh-4OT" secondAttribute="centerX" id="c4S-3Q-XiX"/>
                             <constraint firstItem="HAB-cu-At0" firstAttribute="leading" secondItem="Hhk-Jh-4OT" secondAttribute="leading" constant="-250" id="cUZ-Pl-uRw"/>
+                            <constraint firstItem="D2m-L4-z5g" firstAttribute="top" secondItem="vr8-bR-RXA" secondAttribute="bottom" id="dce-Ef-Y9a"/>
                             <constraint firstItem="D2m-L4-z5g" firstAttribute="top" secondItem="HAB-cu-At0" secondAttribute="bottom" id="fTD-si-bFC"/>
+                            <constraint firstItem="1hS-OD-gYc" firstAttribute="top" secondItem="BRD-oe-jau" secondAttribute="bottom" id="niH-yz-3gG"/>
+                            <constraint firstAttribute="trailing" secondItem="1hS-OD-gYc" secondAttribute="trailing" id="s8m-Qa-9UL"/>
                         </constraints>
                     </view>
                     <connections>
@@ -569,7 +628,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n0e-kT-x7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2962" y="364"/>
+            <point key="canvasLocation" x="2572" y="363.86806596701655"/>
         </scene>
     </scenes>
     <resources>
@@ -577,8 +636,10 @@
         <image name="add_symbol" width="81" height="83"/>
         <image name="blank_profile_pic" width="387" height="385"/>
         <image name="calendar_icon" width="51" height="54"/>
+        <image name="challenge_icon" width="83" height="76"/>
         <image name="default_background" width="750" height="1334"/>
         <image name="done_button_rectangle-1" width="665" height="88"/>
+        <image name="favorite_heart_button" width="73" height="69"/>
         <image name="logo" width="315" height="315"/>
         <image name="menu_icon" width="39" height="28"/>
     </resources>

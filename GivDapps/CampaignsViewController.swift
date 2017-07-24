@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CampaignsViewController: UIViewController {
+class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
     
     override func viewDidLoad() {
@@ -18,6 +18,12 @@ class CampaignsViewController: UIViewController {
         menuView.layer.shadowRadius = 6
         displayMenu = false
         // Do any additional setup after loading the view.
+        
+        
+        
+        // testing
+        //setUpMenuBar()
+        // end testing
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,6 +56,20 @@ class CampaignsViewController: UIViewController {
     }
     
     
+    /*let menuBar:MenuBar = {
+        let mb = MenuBar()
+        return mb
+    }()
+    
+    private func setUpMenuBar(){
+        view.addSubview(menuBar)
+        
+        let heightConstraint = menuBar.heightAnchor.constraint(equalToConstant: CGFloat(0))
+        let widthConstraint = menuBar.widthAnchor.constraint(equalToConstant: CGFloat(50))
+           
+        view.addConstraints([heightConstraint, widthConstraint])
+        
+    }*/
     
     
     
@@ -58,6 +78,44 @@ class CampaignsViewController: UIViewController {
     
     
     
+    
+    
+    
+    func setUpHorizontalBar(){
+        let horizontalBarView = UIView()
+        horizontalBarView.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        horizontalBarView.translatesAutoresizingMaskIntoConstraints = false
+        //horizontalBarView.leftAnchor.constraint(equalTo: self.left)
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    // Testing
+    
+    var optionArray:[String] = ["Nearby","Popular","Almost Funded","Special",""]
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return optionArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! MenuCollectionViewCell
+        
+        cell.cellButton.setTitle(optionArray[indexPath.row], for: .normal)
+        
+        return cell
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        //<#code#>
+    }
     
     
     
