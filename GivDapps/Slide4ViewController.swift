@@ -1,17 +1,24 @@
 //
-//  SignInViewController.swift
+//  Slide4ViewController.swift
 //  GivDapps
 //
-//  Created by Guillermo Colin on 7/21/17.
+//  Created by Guillermo Colin on 7/26/17.
 //  Copyright © 2017 GivDapps. All rights reserved.
 //
 
 import UIKit
 
-class SignInViewController: UIViewController {
+
+
+class Slide4ViewController: UIViewController{
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -21,13 +28,9 @@ class SignInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func takeATour(_ sender: UIButton) {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let ViewController = storyBoard.instantiateViewController(withIdentifier: "TourSlidesViewController")
-        
-        self.present(ViewController, animated: true, completion: nil)
-        
+    
+    @IBAction func done(_ sender: UIButton) {
+        self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
     }
 
     /*
