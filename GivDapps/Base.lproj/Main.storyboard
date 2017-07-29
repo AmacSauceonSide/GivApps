@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wbk-9a-Buy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wbk-9a-Buy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -665,24 +665,104 @@
                                     <outlet property="delegate" destination="aPn-0Y-Wpy" id="vBO-bh-3Ie"/>
                                 </connections>
                             </collectionView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CFA-Jz-H2D">
+                                <rect key="frame" x="16" y="103" width="343" height="515"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pwB-fw-vEJ">
+                                    <size key="itemSize" width="343" height="210"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CampaignCell" id="yAc-is-mzX" customClass="CampaignCollectionViewCell" customModule="GivDapps" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="210"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="210"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="example_campaignCompany_pic" translatesAutoresizingMaskIntoConstraints="NO" id="rT0-OY-MJQ">
+                                                    <rect key="frame" x="8" y="6" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="dvn-kW-QQ8"/>
+                                                        <constraint firstAttribute="height" constant="70" id="rXB-ad-b6X"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqB-dv-ziu">
+                                                    <rect key="frame" x="89" y="8" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhA-RM-7zx">
+                                                    <rect key="frame" x="89" y="29" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Donate to this campaign. Click somewhere to find out more." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8f-72-6wV">
+                                                    <rect key="frame" x="8" y="95" width="327" height="51"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="example_campaign_pic" translatesAutoresizingMaskIntoConstraints="NO" id="vOk-hZ-idG">
+                                                    <rect key="frame" x="8" y="145" width="327" height="47"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="47" id="Sg0-n4-X7U"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="vOk-hZ-idG" secondAttribute="bottom" constant="18" id="9x4-e4-6pc"/>
+                                            <constraint firstItem="NqB-dv-ziu" firstAttribute="leading" secondItem="rT0-OY-MJQ" secondAttribute="trailing" constant="11" id="DH6-oz-hHI"/>
+                                            <constraint firstItem="QhA-RM-7zx" firstAttribute="top" secondItem="NqB-dv-ziu" secondAttribute="bottom" id="DSf-Ay-PIv"/>
+                                            <constraint firstItem="vOk-hZ-idG" firstAttribute="top" secondItem="z8f-72-6wV" secondAttribute="bottom" constant="-1" id="Hqx-Dl-b8S"/>
+                                            <constraint firstItem="rT0-OY-MJQ" firstAttribute="top" secondItem="yAc-is-mzX" secondAttribute="topMargin" constant="-2" id="QIb-ST-VXu"/>
+                                            <constraint firstItem="z8f-72-6wV" firstAttribute="top" secondItem="rT0-OY-MJQ" secondAttribute="bottom" constant="19" id="RcW-ts-0qt"/>
+                                            <constraint firstItem="QhA-RM-7zx" firstAttribute="leading" secondItem="rT0-OY-MJQ" secondAttribute="trailing" constant="11" id="YX1-6v-v4l"/>
+                                            <constraint firstItem="vOk-hZ-idG" firstAttribute="leading" secondItem="yAc-is-mzX" secondAttribute="leadingMargin" id="gBA-SV-A71"/>
+                                            <constraint firstItem="vOk-hZ-idG" firstAttribute="trailing" secondItem="yAc-is-mzX" secondAttribute="trailingMargin" id="gHh-5o-WLf"/>
+                                            <constraint firstItem="vOk-hZ-idG" firstAttribute="trailing" secondItem="z8f-72-6wV" secondAttribute="trailing" id="jKc-yA-BsH"/>
+                                            <constraint firstItem="vOk-hZ-idG" firstAttribute="leading" secondItem="rT0-OY-MJQ" secondAttribute="leading" id="jw8-gy-tWl"/>
+                                            <constraint firstItem="NqB-dv-ziu" firstAttribute="top" secondItem="yAc-is-mzX" secondAttribute="topMargin" id="lc3-7F-HUe"/>
+                                            <constraint firstItem="vOk-hZ-idG" firstAttribute="leading" secondItem="z8f-72-6wV" secondAttribute="leading" id="len-Bw-5st"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="campaignPic" destination="vOk-hZ-idG" id="r3Y-dC-PyU"/>
+                                            <outlet property="companyLabel" destination="QhA-RM-7zx" id="9N5-V9-JYS"/>
+                                            <outlet property="descriptionLabel" destination="z8f-72-6wV" id="p91-We-JgS"/>
+                                            <outlet property="userNameLabel" destination="NqB-dv-ziu" id="7HS-97-m3H"/>
+                                            <outlet property="userProfilePic" destination="rT0-OY-MJQ" id="7BB-5J-q8h"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vr8-bR-RXA" firstAttribute="leading" secondItem="BRD-oe-jau" secondAttribute="leading" id="8rY-DV-BeH"/>
                             <constraint firstItem="vr8-bR-RXA" firstAttribute="trailing" secondItem="BRD-oe-jau" secondAttribute="trailing" id="ATe-0m-qoN"/>
                             <constraint firstItem="BRD-oe-jau" firstAttribute="top" secondItem="l1d-Iq-5JD" secondAttribute="bottom" id="DUX-vW-DcG"/>
+                            <constraint firstItem="CFA-Jz-H2D" firstAttribute="centerX" secondItem="1hS-OD-gYc" secondAttribute="centerX" id="GNc-M7-oK7"/>
                             <constraint firstItem="HAB-cu-At0" firstAttribute="top" secondItem="BRD-oe-jau" secondAttribute="bottom" id="Oh0-iT-gXI"/>
                             <constraint firstItem="1hS-OD-gYc" firstAttribute="leading" secondItem="HAB-cu-At0" secondAttribute="trailing" constant="10" id="VKv-k9-8RH"/>
                             <constraint firstItem="BRD-oe-jau" firstAttribute="width" secondItem="Hhk-Jh-4OT" secondAttribute="width" id="ZdP-Y1-IB9"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="CFA-Jz-H2D" secondAttribute="leading" id="bhc-Lb-plw"/>
                             <constraint firstItem="BRD-oe-jau" firstAttribute="centerX" secondItem="Hhk-Jh-4OT" secondAttribute="centerX" id="c4S-3Q-XiX"/>
                             <constraint firstItem="HAB-cu-At0" firstAttribute="leading" secondItem="Hhk-Jh-4OT" secondAttribute="leading" constant="-250" id="cUZ-Pl-uRw"/>
                             <constraint firstItem="D2m-L4-z5g" firstAttribute="top" secondItem="vr8-bR-RXA" secondAttribute="bottom" id="dce-Ef-Y9a"/>
+                            <constraint firstItem="CFA-Jz-H2D" firstAttribute="bottom" secondItem="vr8-bR-RXA" secondAttribute="top" id="fLY-az-Cz4"/>
                             <constraint firstItem="D2m-L4-z5g" firstAttribute="top" secondItem="HAB-cu-At0" secondAttribute="bottom" id="fTD-si-bFC"/>
                             <constraint firstItem="1hS-OD-gYc" firstAttribute="top" secondItem="BRD-oe-jau" secondAttribute="bottom" id="niH-yz-3gG"/>
                             <constraint firstAttribute="trailing" secondItem="1hS-OD-gYc" secondAttribute="trailing" id="s8m-Qa-9UL"/>
+                            <constraint firstItem="CFA-Jz-H2D" firstAttribute="top" secondItem="1hS-OD-gYc" secondAttribute="bottom" constant="8" id="wMy-l2-8qV"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="campaignCollectionView" destination="CFA-Jz-H2D" id="nRx-Ve-d0I"/>
                         <outlet property="leadingConstraint" destination="cUZ-Pl-uRw" id="u7X-1n-Rtf"/>
                         <outlet property="menuView" destination="HAB-cu-At0" id="Xh4-AQ-YRw"/>
                     </connections>
@@ -825,6 +905,8 @@
         <image name="challenge_icon" width="83" height="76"/>
         <image name="default_background" width="750" height="1334"/>
         <image name="done_button_rectangle-1" width="665" height="88"/>
+        <image name="example_campaignCompany_pic" width="82" height="81"/>
+        <image name="example_campaign_pic" width="707" height="268"/>
         <image name="favorite_heart_button" width="73" height="69"/>
         <image name="intro_slide1_img" width="638" height="630"/>
         <image name="intro_slide2_img" width="611" height="630"/>

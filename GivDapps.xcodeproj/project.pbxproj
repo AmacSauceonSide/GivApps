@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB1B22F51F2D393600D49BB5 /* CampaignCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B22F41F2D393600D49BB5 /* CampaignCollectionViewCell.swift */; };
+		CB1B22F71F2D3F6000D49BB5 /* CampaignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B22F61F2D3F6000D49BB5 /* CampaignCell.swift */; };
 		CB86041F1F2031A700041FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86041E1F2031A700041FDF /* AppDelegate.swift */; };
 		CB8604261F2031A700041FDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB8604241F2031A700041FDF /* Main.storyboard */; };
 		CB8604281F2031A700041FDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB8604271F2031A700041FDF /* Assets.xcassets */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB1B22F41F2D393600D49BB5 /* CampaignCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignCollectionViewCell.swift; sourceTree = "<group>"; };
+		CB1B22F61F2D3F6000D49BB5 /* CampaignCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignCell.swift; sourceTree = "<group>"; };
 		CB86041B1F2031A700041FDF /* GivDapps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GivDapps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB86041E1F2031A700041FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB8604251F2031A700041FDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 				CB8604291F2031A700041FDF /* LaunchScreen.storyboard */,
 				CB86042C1F2031A700041FDF /* Info.plist */,
 				CBF4B6FE1F240AB500114632 /* MenuCollectionViewCell.swift */,
+				CB1B22F61F2D3F6000D49BB5 /* CampaignCell.swift */,
 			);
 			path = GivDapps;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 		CBF4B6F81F23FC6700114632 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CB1B22F41F2D393600D49BB5 /* CampaignCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -299,9 +305,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB1B22F51F2D393600D49BB5 /* CampaignCollectionViewCell.swift in Sources */,
 				CBF4B6F71F23E70500114632 /* CampaignsViewController.swift in Sources */,
 				CB9462851F28454500597004 /* SlidesPageViewController.swift in Sources */,
 				CBF4B6FF1F240AB500114632 /* MenuCollectionViewCell.swift in Sources */,
+				CB1B22F71F2D3F6000D49BB5 /* CampaignCell.swift in Sources */,
 				CBE6B3BE1F292C9D00909B03 /* Slide4ViewController.swift in Sources */,
 				CBD475241F230804006E3A08 /* SignInViewController.swift in Sources */,
 				CBD475261F230F52006E3A08 /* ForgotPasswordViewController.swift in Sources */,

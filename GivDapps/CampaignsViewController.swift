@@ -19,8 +19,9 @@ class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICol
         displayMenu = false
         // Do any additional setup after loading the view.
         
-        
-        
+        campaignCollectionView.delegate = self
+        campaignCollectionView.dataSource = self
+       
         // testing
         //setUpMenuBar()
         // end testing
@@ -33,10 +34,14 @@ class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICol
     
     @IBOutlet weak var menuView: UIView!
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     
     var displayMenu:Bool = false
 
+    @IBOutlet weak var campaignCollectionView: UICollectionView!
     
     
     @IBAction func menu(_ sender: UIBarButtonItem) {
@@ -101,15 +106,33 @@ class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICol
     var optionArray:[String] = ["Nearby","Popular","Almost Funded","Special",""]
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return optionArray.count
+        
+        switch collectionView {
+        case campaignCollectionView:
+            return 3
+        default:
+            return optionArray.count
+        }
+        //return optionArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! MenuCollectionViewCell
         
-        cell.cellButton.setTitle(optionArray[indexPath.row], for: .normal)
-        
-        return cell
+        switch collectionView {
+        case campaignCollectionView:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CampaignCell", for: indexPath) as! CampaignCollectionViewCell
+            
+            //cell.cellButton.setTitle(optionArray[indexPath.row], for: .normal)
+            
+            return cell
+        default:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! MenuCollectionViewCell
+            
+            cell.cellButton.setTitle(optionArray[indexPath.row], for: .normal)
+            
+            return cell
+        }
+
         
     }
     
