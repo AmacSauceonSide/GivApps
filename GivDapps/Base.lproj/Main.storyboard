@@ -896,6 +896,43 @@
             </objects>
             <point key="canvasLocation" x="4541.6000000000004" y="-319.79010494752629"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="LSS-oI-Ww9">
+            <objects>
+                <viewController id="232-Nd-WKo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HZq-Li-2Hn"/>
+                        <viewControllerLayoutGuide type="bottom" id="4y9-PI-k4A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t9g-OB-MQT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OLd-hh-Vme">
+                                <rect key="frame" x="91" y="89" width="192" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kw2-rM-MCv">
+                                <rect key="frame" x="169" y="198" width="36" height="30"/>
+                                <state key="normal" title="Send"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OLd-hh-Vme" firstAttribute="leading" secondItem="t9g-OB-MQT" secondAttribute="leadingMargin" constant="75" id="N1M-DG-oH9"/>
+                            <constraint firstItem="kw2-rM-MCv" firstAttribute="centerX" secondItem="OLd-hh-Vme" secondAttribute="centerX" id="UXE-SP-xlK"/>
+                            <constraint firstItem="kw2-rM-MCv" firstAttribute="centerX" secondItem="t9g-OB-MQT" secondAttribute="centerX" id="fqe-oP-cMc"/>
+                            <constraint firstItem="kw2-rM-MCv" firstAttribute="top" secondItem="OLd-hh-Vme" secondAttribute="bottom" constant="79" id="mPt-5b-Bt0"/>
+                            <constraint firstItem="OLd-hh-Vme" firstAttribute="top" secondItem="HZq-Li-2Hn" secondAttribute="bottom" constant="69" id="rR8-q0-Ut9"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a2e-jD-lmK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4231.1999999999998" y="478.11094452773619"/>
+        </scene>
     </scenes>
     <resources>
         <image name="GivDappsLetters" width="434" height="92"/>

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate,UIImagePickerControllerDelegate{
     
@@ -14,14 +17,16 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        ref = Database.database().reference()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
+    var ref:DatabaseReference!
     
     //  UITextFields.
     @IBOutlet weak var firstNameTF: UITextField!
@@ -61,6 +66,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
         //  If all fields were completed grant access to the next step.
         if completedFields(){
             print("\nAll fields completed\n")
+            ref.child("Test").setValue("Received")
         }
             //  Else alert the user.
         else{
