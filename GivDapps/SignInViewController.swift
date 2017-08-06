@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+
 
 class SignInViewController: UIViewController {
 
@@ -21,6 +23,10 @@ class SignInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    
+    
     @IBAction func takeATour(_ sender: UIButton) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -30,6 +36,10 @@ class SignInViewController: UIViewController {
         
     }
 
+    
+    /*func signIn() {
+        Auth.signIn(<#T##Auth#>)
+    }*/
     /*
     // MARK: - Navigation
 

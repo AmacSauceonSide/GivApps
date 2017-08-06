@@ -12,6 +12,7 @@
 		CB1B22F51F2D393600D49BB5 /* CampaignCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B22F41F2D393600D49BB5 /* CampaignCollectionViewCell.swift */; };
 		CB1B22F71F2D3F6000D49BB5 /* CampaignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B22F61F2D3F6000D49BB5 /* CampaignCell.swift */; };
 		CB3FA2CD1F35649D003728D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB3FA2CC1F35649D003728D5 /* GoogleService-Info.plist */; };
+		CB45C33E1F36BC720012219E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB45C33D1F36BC720012219E /* User.swift */; };
 		CB86041F1F2031A700041FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB86041E1F2031A700041FDF /* AppDelegate.swift */; };
 		CB8604261F2031A700041FDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB8604241F2031A700041FDF /* Main.storyboard */; };
 		CB8604281F2031A700041FDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB8604271F2031A700041FDF /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		CB1B22F41F2D393600D49BB5 /* CampaignCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignCollectionViewCell.swift; sourceTree = "<group>"; };
 		CB1B22F61F2D3F6000D49BB5 /* CampaignCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignCell.swift; sourceTree = "<group>"; };
 		CB3FA2CC1F35649D003728D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CB45C33D1F36BC720012219E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB86041B1F2031A700041FDF /* GivDapps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GivDapps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB86041E1F2031A700041FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB8604251F2031A700041FDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CB45C33C1F36BC580012219E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB45C33D1F36BC720012219E /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		CB8604121F2031A700041FDF = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +157,7 @@
 		CB86041D1F2031A700041FDF /* GivDapps */ = {
 			isa = PBXGroup;
 			children = (
+				CB45C33C1F36BC580012219E /* Model */,
 				CBF4B6F81F23FC6700114632 /* View */,
 				CBF4B6FB1F23FC8900114632 /* Controller */,
 				CB86041E1F2031A700041FDF /* AppDelegate.swift */,
@@ -504,6 +515,7 @@
 				CBE6B3BE1F292C9D00909B03 /* Slide4ViewController.swift in Sources */,
 				CBD475241F230804006E3A08 /* SignInViewController.swift in Sources */,
 				CBD475261F230F52006E3A08 /* ForgotPasswordViewController.swift in Sources */,
+				CB45C33E1F36BC720012219E /* User.swift in Sources */,
 				CB8604511F203C2400041FDF /* SignUpViewController.swift in Sources */,
 				CB86044F1F20328300041FDF /* ViewController.swift in Sources */,
 				CB86041F1F2031A700041FDF /* AppDelegate.swift in Sources */,

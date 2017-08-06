@@ -18,6 +18,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         ref = Database.database().reference()
+        
+        activityIndicator.isHidden = true
+        activityIndicator.hidesWhenStopped = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +39,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
     @IBOutlet weak var emailTF: UITextField!
     
     @IBOutlet weak var passwordTF: UITextField!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     //  ScrollView to adjust the view when typing requires it.
     @IBOutlet weak var scrollView: UIScrollView!
@@ -65,10 +71,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
         
         //  If all fields were completed grant access to the next step.
         if completedFields(){
-            print("\nAll fields completed\n")
-            ref.child("Test").setValue("Received")
+
+            registerUser(firstN: firstNameTF, lastN: lastNameTF, email: emailTF, password: passwordTF)
+            
         }
-            //  Else alert the user.
+            
+        //  Else alert the user.
         else{
             
             let alert = UIAlertController(title: "Incomplete Fields", message: "Make sure you fill out every field.", preferredStyle: .alert)
@@ -212,6 +220,66 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationC
         self.view.endEditing(true)
         
     }
+    
+    
+    //  Function to register the user
+    func registerUser(firstN: UITextField, lastN: UITextField, email: UITextField, password: UITextField){
+        
+        //  Indicate an operation is taking place behind the scenes.
+        self.activityIndicator.isHidden = false
+        self.activityIndicator.startAnimating()
+        
+        //  User's basic info.
+        guard let userFirstN:String = firstN.text, let userLastN:String = lastN.text else {
+            return
+        }
+        
+        //  New User Credentials.
+        guard let userEmail:String = email.text, let userPassword:String = password.text else {
+            return
+        }
+        
+        //  Create new user in the Firebase
+        Auth.auth().createUser(withEmail: userEmail, password: userPassword, completion: { (user, error) in
+            if error != nil{
+                print(error!.localizedDescription)
+
+            }else{
+                
+                //  Register new user with a user id
+                guard let uid = user?.uid else{
+                    return
+                }
+                
+                let newUser = User(firstN: userFirstN, lastN: userLastN, email: userEmail)
+                
+                let userReference = self.ref.child("User").child(uid)
+                
+                userReference.updateChildValues(newUser.basicUserInfo, withCompletionBlock:{ (error, ref) in
+                    if (error != nil){
+                        print(error?.localizedDescription ?? "Error Saving user data")
+                    }
+                    else{
+                        print("\nUser Profile Successfully created\n")
+                        
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller = storyboard.instantiateViewController(withIdentifier: "LogInView")
+                        self.present(controller, animated: true, completion: nil)
+                    }
+                    
+                })
+         
+
+            }
+            
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+            }
+            
+        })
+        
+    }
+
     
     /*
      // MARK: - Navigation

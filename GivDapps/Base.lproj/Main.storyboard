@@ -13,7 +13,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="J00-lR-oM1">
             <objects>
-                <viewController id="wbk-9a-Buy" customClass="SignInViewController" customModule="GivDapps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInView" id="wbk-9a-Buy" customClass="SignInViewController" customModule="GivDapps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bO4-gD-Pn9"/>
                         <viewControllerLayoutGuide type="bottom" id="5UX-Qc-4Iz"/>
@@ -373,14 +373,20 @@
                                             <action selector="alreadyHaveAccount:" destination="aDW-Zw-eVw" eventType="touchUpInside" id="6Ax-FF-5rI"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="yKD-aF-3Ex">
+                                        <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="gcS-Fl-FrW" firstAttribute="centerY" secondItem="7e0-dF-Vda" secondAttribute="centerY" id="3Rt-Ff-DEH"/>
+                                    <constraint firstItem="yKD-aF-3Ex" firstAttribute="top" secondItem="XKH-uJ-zbd" secondAttribute="bottom" constant="145" id="5ud-3o-aYv"/>
                                     <constraint firstAttribute="trailing" secondItem="gcS-Fl-FrW" secondAttribute="trailing" constant="16" id="5xZ-GX-7yM"/>
                                     <constraint firstAttribute="bottom" secondItem="A7i-uG-tjA" secondAttribute="bottom" constant="67" id="8Tp-Q5-T6o"/>
                                     <constraint firstItem="A7i-uG-tjA" firstAttribute="top" secondItem="B1S-iW-O8v" secondAttribute="bottom" constant="24" id="Ffz-X4-Fpm"/>
                                     <constraint firstItem="XKH-uJ-zbd" firstAttribute="top" secondItem="7e0-dF-Vda" secondAttribute="top" constant="56" id="I9B-ro-Jd6"/>
+                                    <constraint firstAttribute="trailing" secondItem="yKD-aF-3Ex" secondAttribute="trailing" constant="178" id="OEr-QP-6f4"/>
                                     <constraint firstItem="A7i-uG-tjA" firstAttribute="centerX" secondItem="gcS-Fl-FrW" secondAttribute="centerX" id="Qzc-zh-Ojg"/>
+                                    <constraint firstItem="A7i-uG-tjA" firstAttribute="top" secondItem="yKD-aF-3Ex" secondAttribute="bottom" constant="227" id="R5l-dK-XzH"/>
                                     <constraint firstItem="gcS-Fl-FrW" firstAttribute="leading" secondItem="7e0-dF-Vda" secondAttribute="leading" constant="16" id="RnI-rg-Waz"/>
                                     <constraint firstAttribute="bottom" secondItem="gcS-Fl-FrW" secondAttribute="bottom" constant="121" id="cdJ-b5-YHt"/>
                                     <constraint firstItem="A7i-uG-tjA" firstAttribute="leading" secondItem="7e0-dF-Vda" secondAttribute="leading" constant="95" id="d5l-3j-icR"/>
@@ -389,6 +395,7 @@
                                     <constraint firstItem="dpz-Q7-WDB" firstAttribute="centerY" secondItem="XKH-uJ-zbd" secondAttribute="centerY" id="eVT-Pt-GEr"/>
                                     <constraint firstItem="dpz-Q7-WDB" firstAttribute="leading" secondItem="XKH-uJ-zbd" secondAttribute="trailing" constant="-11" id="jxE-eo-rZy"/>
                                     <constraint firstItem="XKH-uJ-zbd" firstAttribute="centerX" secondItem="7e0-dF-Vda" secondAttribute="centerX" id="kq6-Ul-pVb"/>
+                                    <constraint firstItem="yKD-aF-3Ex" firstAttribute="leading" secondItem="7e0-dF-Vda" secondAttribute="leading" constant="177" id="t1p-VW-bdI"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -405,6 +412,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="yKD-aF-3Ex" id="JoM-Bn-rO8"/>
                         <outlet property="emailTF" destination="Gfb-sA-8mN" id="OFB-zN-945"/>
                         <outlet property="firstNameTF" destination="lOM-74-zYh" id="stp-Mz-s61"/>
                         <outlet property="innerView" destination="gcS-Fl-FrW" id="eMx-WQ-dO8"/>
