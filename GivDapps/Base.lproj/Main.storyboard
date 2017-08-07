@@ -40,7 +40,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="746" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ju8-jN-MBN">
                                 <rect key="frame" x="16" y="414" width="343" height="38"/>
@@ -52,7 +52,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="aPn-0Y-Wpy" kind="show" id="WqY-2S-Ri1"/>
+                                    <action selector="signIn:" destination="wbk-9a-Buy" eventType="touchUpInside" id="ORm-Ga-lqt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="747" text="Welcome Back!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1RY-sg-os2">
@@ -154,6 +154,10 @@
                             <constraint firstItem="1RY-sg-os2" firstAttribute="top" secondItem="SX6-4M-S3a" secondAttribute="bottom" constant="15" id="xh3-Bv-PoZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTF" destination="tdi-au-pOo" id="3eR-BZ-2vM"/>
+                        <outlet property="passwordTF" destination="q5q-Ne-BKu" id="NqU-wE-xnY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqh-Bq-HLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -587,7 +591,7 @@
         <!--Campaigns View Controller-->
         <scene sceneID="72c-Z9-KkJ">
             <objects>
-                <viewController id="aPn-0Y-Wpy" customClass="CampaignsViewController" customModule="GivDapps" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserProfileView" id="aPn-0Y-Wpy" customClass="CampaignsViewController" customModule="GivDapps" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="l1d-Iq-5JD"/>
                         <viewControllerLayoutGuide type="bottom" id="D2m-L4-z5g"/>

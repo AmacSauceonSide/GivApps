@@ -11,7 +11,7 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-class SignUpViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate,UIImagePickerControllerDelegate{
+class SignUpViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
     
 
     override func viewDidLoad() {
