@@ -140,6 +140,15 @@ class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICol
         //<#code#>
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let controller = storyboard.instantiateViewController(withIdentifier: "InNeedView")
+        self.present(controller, animated: true, completion: nil)
+    }
     
     
     /*
