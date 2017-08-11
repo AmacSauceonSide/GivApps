@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CampaignCollectionViewCell: UICollectionViewCell {
     
@@ -19,7 +20,5 @@ class CampaignCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var userProfilePic: UIImageView!
     
     @IBOutlet weak var campaignPic: UIImageView!
-    
-    
-    
+        
 }
