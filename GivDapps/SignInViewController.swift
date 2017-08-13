@@ -59,8 +59,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             }
             else{
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let viewController = storyboard.instantiateViewController(withIdentifier: "UserProfileView")
+                let viewController = storyboard.instantiateViewController(withIdentifier: "RevealView")
                 self.present(viewController, animated: true, completion: nil)
+                /*let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier: "UserProfileView")
+                self.present(viewController, animated: true, completion: nil)*/
             }
         })
         

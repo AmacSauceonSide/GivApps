@@ -19,8 +19,8 @@ class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICol
         super.viewDidLoad()
         ref = Database.database().reference()
         getCauses(ref: ref)
-        menuView.layer.shadowOpacity = 1
-        menuView.layer.shadowRadius = 6
+        //menuView.layer.shadowOpacity = 1
+        //menuView.layer.shadowRadius = 6
         displayMenu = false
         // Do any additional setup after loading the view.
         
@@ -30,6 +30,9 @@ class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICol
         // testing
         //setUpMenuBar()
         // end testing
+        
+        menu.target = self.revealViewController()
+        menu.action = Selector("revealToggle:")
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +47,7 @@ class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICol
     var campaings = [Cause]()
     
     
-    @IBOutlet weak var menuView: UIView!
+    //@IBOutlet weak var menuView: UIView!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -56,7 +59,11 @@ class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet weak var campaignCollectionView: UICollectionView!
     
     
-    @IBAction func menu(_ sender: UIBarButtonItem) {
+    @IBOutlet var menu: UIBarButtonItem!
+    
+    
+    /*@IBAction func menu(_ sender: UIBarButtonItem) {
+        
         
         if(displayMenu){
             leadingConstraint.constant = -250
@@ -70,7 +77,7 @@ class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICol
         }
         
         displayMenu = !displayMenu
-    }
+    }*/
     
     
     /*let menuBar:MenuBar = {

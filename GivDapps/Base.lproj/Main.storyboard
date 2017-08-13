@@ -588,7 +588,7 @@
             </objects>
             <point key="canvasLocation" x="409" y="788"/>
         </scene>
-        <!--Campaigns View Controller-->
+        <!--In Need-->
         <scene sceneID="72c-Z9-KkJ">
             <objects>
                 <viewController storyboardIdentifier="UserProfileView" id="aPn-0Y-Wpy" customClass="CampaignsViewController" customModule="GivDapps" customModuleProvider="target" sceneMemberID="viewController">
@@ -600,47 +600,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HAB-cu-At0">
-                                <rect key="frame" x="-250" y="64" width="240" height="603"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="D68-a1-pYb"/>
-                                </constraints>
-                            </view>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRD-oe-jau">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Campaigns" id="p6E-7H-PDJ">
-                                        <barButtonItem key="leftBarButtonItem" image="menu_icon" id="jJl-DH-lGC">
-                                            <color key="tintColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="menu:" destination="aPn-0Y-Wpy" id="YKu-SB-PCv"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" image="calendar_icon" id="uHu-Uw-92w">
-                                            <inset key="imageInsets" minX="5" minY="8" maxX="0.0" maxY="9"/>
-                                            <color key="tintColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vr8-bR-RXA">
-                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem image="favorite_heart_button" id="iRh-RI-w6h">
-                                        <inset key="imageInsets" minX="0.0" minY="18" maxX="15" maxY="0.0"/>
-                                    </tabBarItem>
-                                    <tabBarItem image="challenge_icon" id="ZIo-Ka-gb8">
-                                        <inset key="imageInsets" minX="0.0" minY="18" maxX="15" maxY="0.0"/>
-                                    </tabBarItem>
-                                </items>
-                            </tabBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1hS-OD-gYc">
                                 <rect key="frame" x="0.0" y="64" width="375" height="31"/>
                                 <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="FdO-Kl-yjV"/>
+                                    <constraint firstAttribute="height" constant="31" id="e1N-61-nzM"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="s5B-5j-PAz">
                                     <size key="itemSize" width="130" height="29"/>
@@ -657,7 +621,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTj-zs-Mfg">
-                                                    <rect key="frame" x="8" y="0.0" width="114" height="30"/>
+                                                    <rect key="frame" x="8" y="0.0" width="46" height="30"/>
                                                     <state key="normal" title="Button"/>
                                                 </button>
                                             </subviews>
@@ -678,7 +642,7 @@
                                 </connections>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="CFA-Jz-H2D">
-                                <rect key="frame" x="16" y="103" width="343" height="515"/>
+                                <rect key="frame" x="16" y="103" width="343" height="471"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pwB-fw-vEJ">
                                     <size key="itemSize" width="343" height="210"/>
@@ -752,36 +716,80 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vr8-bR-RXA">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem image="favorite_heart_button" id="iRh-RI-w6h">
+                                        <inset key="imageInsets" minX="0.0" minY="18" maxX="15" maxY="0.0"/>
+                                    </tabBarItem>
+                                    <tabBarItem image="challenge_icon" id="ZIo-Ka-gb8">
+                                        <inset key="imageInsets" minX="0.0" minY="18" maxX="15" maxY="0.0"/>
+                                    </tabBarItem>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vr8-bR-RXA" firstAttribute="leading" secondItem="BRD-oe-jau" secondAttribute="leading" id="8rY-DV-BeH"/>
-                            <constraint firstItem="vr8-bR-RXA" firstAttribute="trailing" secondItem="BRD-oe-jau" secondAttribute="trailing" id="ATe-0m-qoN"/>
-                            <constraint firstItem="BRD-oe-jau" firstAttribute="top" secondItem="l1d-Iq-5JD" secondAttribute="bottom" id="DUX-vW-DcG"/>
-                            <constraint firstItem="CFA-Jz-H2D" firstAttribute="centerX" secondItem="1hS-OD-gYc" secondAttribute="centerX" id="GNc-M7-oK7"/>
-                            <constraint firstItem="HAB-cu-At0" firstAttribute="top" secondItem="BRD-oe-jau" secondAttribute="bottom" id="Oh0-iT-gXI"/>
-                            <constraint firstItem="1hS-OD-gYc" firstAttribute="leading" secondItem="HAB-cu-At0" secondAttribute="trailing" constant="10" id="VKv-k9-8RH"/>
-                            <constraint firstItem="BRD-oe-jau" firstAttribute="width" secondItem="Hhk-Jh-4OT" secondAttribute="width" id="ZdP-Y1-IB9"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="CFA-Jz-H2D" secondAttribute="leading" id="bhc-Lb-plw"/>
-                            <constraint firstItem="BRD-oe-jau" firstAttribute="centerX" secondItem="Hhk-Jh-4OT" secondAttribute="centerX" id="c4S-3Q-XiX"/>
-                            <constraint firstItem="HAB-cu-At0" firstAttribute="leading" secondItem="Hhk-Jh-4OT" secondAttribute="leading" constant="-250" id="cUZ-Pl-uRw"/>
-                            <constraint firstItem="D2m-L4-z5g" firstAttribute="top" secondItem="vr8-bR-RXA" secondAttribute="bottom" id="dce-Ef-Y9a"/>
-                            <constraint firstItem="CFA-Jz-H2D" firstAttribute="bottom" secondItem="vr8-bR-RXA" secondAttribute="top" id="fLY-az-Cz4"/>
-                            <constraint firstItem="D2m-L4-z5g" firstAttribute="top" secondItem="HAB-cu-At0" secondAttribute="bottom" id="fTD-si-bFC"/>
-                            <constraint firstItem="1hS-OD-gYc" firstAttribute="top" secondItem="BRD-oe-jau" secondAttribute="bottom" id="niH-yz-3gG"/>
-                            <constraint firstAttribute="trailing" secondItem="1hS-OD-gYc" secondAttribute="trailing" id="s8m-Qa-9UL"/>
-                            <constraint firstItem="CFA-Jz-H2D" firstAttribute="top" secondItem="1hS-OD-gYc" secondAttribute="bottom" constant="8" id="wMy-l2-8qV"/>
+                            <constraint firstItem="vr8-bR-RXA" firstAttribute="bottom" secondItem="D2m-L4-z5g" secondAttribute="top" id="0dA-ho-omb"/>
+                            <constraint firstItem="1hS-OD-gYc" firstAttribute="leading" secondItem="Hhk-Jh-4OT" secondAttribute="leading" id="0ml-p9-AEP"/>
+                            <constraint firstItem="CFA-Jz-H2D" firstAttribute="leading" secondItem="Hhk-Jh-4OT" secondAttribute="leadingMargin" id="CU2-Nq-XoZ"/>
+                            <constraint firstItem="vr8-bR-RXA" firstAttribute="top" secondItem="CFA-Jz-H2D" secondAttribute="bottom" constant="44" id="Fnu-8q-55n"/>
+                            <constraint firstItem="CFA-Jz-H2D" firstAttribute="top" secondItem="1hS-OD-gYc" secondAttribute="bottom" constant="8" id="KGs-ix-KsY"/>
+                            <constraint firstItem="1hS-OD-gYc" firstAttribute="centerX" secondItem="CFA-Jz-H2D" secondAttribute="centerX" id="e4j-tk-4AQ"/>
+                            <constraint firstItem="vr8-bR-RXA" firstAttribute="leading" secondItem="1hS-OD-gYc" secondAttribute="leading" id="hnV-33-qx6"/>
+                            <constraint firstItem="vr8-bR-RXA" firstAttribute="trailing" secondItem="1hS-OD-gYc" secondAttribute="trailing" id="k1Q-zq-7FI"/>
+                            <constraint firstItem="1hS-OD-gYc" firstAttribute="centerX" secondItem="Hhk-Jh-4OT" secondAttribute="centerX" id="nhk-2a-pg6"/>
+                            <constraint firstItem="1hS-OD-gYc" firstAttribute="top" secondItem="l1d-Iq-5JD" secondAttribute="bottom" id="ypt-bp-JEE"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="In Need" id="lLE-6v-9Bx">
+                        <barButtonItem key="leftBarButtonItem" image="menu_icon" id="k3Q-Yp-QEg">
+                            <color key="tintColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="campaignCollectionView" destination="CFA-Jz-H2D" id="nRx-Ve-d0I"/>
-                        <outlet property="leadingConstraint" destination="cUZ-Pl-uRw" id="u7X-1n-Rtf"/>
-                        <outlet property="menuView" destination="HAB-cu-At0" id="Xh4-AQ-YRw"/>
+                        <outlet property="menu" destination="k3Q-Yp-QEg" id="0Rp-Ur-9JP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n0e-kT-x7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2497" y="27"/>
+            <point key="canvasLocation" x="4134" y="27"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ZRc-ny-yzO">
+            <objects>
+                <viewController id="Z1Z-Hn-pdU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d6L-Vj-ePY"/>
+                        <viewControllerLayoutGuide type="bottom" id="O6w-ye-ZPX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jhm-Yo-kSY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GXT-NV-LZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3153" y="788"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="f3b-yc-n8Y">
+            <objects>
+                <navigationController id="eNq-Bf-l4o" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tbF-Vh-1Aq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="aPn-0Y-Wpy" kind="relationship" relationship="rootViewController" id="pax-15-DdZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SOy-dS-gvw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3153" y="27"/>
         </scene>
         <!--In Need View Controller-->
         <scene sceneID="ELz-88-Fps">
@@ -940,7 +948,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h3Y-OW-J51" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3153" y="27"/>
+            <point key="canvasLocation" x="4812" y="27"/>
         </scene>
         <!--Dummy Cause View Controller-->
         <scene sceneID="MAh-3d-XcV">
@@ -1042,7 +1050,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vay-ls-6G6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3817" y="27"/>
+            <point key="canvasLocation" x="5495" y="27"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="C5d-7d-MBE">
+            <objects>
+                <viewController storyboardIdentifier="RevealView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uVO-Om-ri6" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Mi-cJ-RwX"/>
+                        <viewControllerLayoutGuide type="bottom" id="vhb-Gz-cBc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="41V-Fr-zju">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="eNq-Bf-l4o" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="Jhf-DV-zKr"/>
+                        <segue destination="Z1Z-Hn-pdU" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="bcg-u1-kfZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PE6-9U-B24" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2268" y="27"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="IqF-2D-QDG">
@@ -1174,7 +1204,6 @@
         <image name="GivDappsLetters" width="434" height="92"/>
         <image name="add_symbol" width="81" height="83"/>
         <image name="blank_profile_pic" width="387" height="385"/>
-        <image name="calendar_icon" width="51" height="54"/>
         <image name="challenge_icon" width="83" height="76"/>
         <image name="default_background" width="750" height="1334"/>
         <image name="done_button_rectangle-1" width="665" height="88"/>

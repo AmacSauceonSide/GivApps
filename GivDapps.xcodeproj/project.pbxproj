@@ -27,6 +27,7 @@
 		CB9C39391F3B862500EFFD62 /* Cause.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9C39381F3B862500EFFD62 /* Cause.swift */; };
 		CBD475241F230804006E3A08 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD475231F230804006E3A08 /* SignInViewController.swift */; };
 		CBD475261F230F52006E3A08 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD475251F230F52006E3A08 /* ForgotPasswordViewController.swift */; };
+		CBDB40471F40C109006E25EA /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDB40461F40C109006E25EA /* SWRevealViewController.m */; };
 		CBE6B3BE1F292C9D00909B03 /* Slide4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE6B3BD1F292C9D00909B03 /* Slide4ViewController.swift */; };
 		CBF4B6F71F23E70500114632 /* CampaignsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4B6F61F23E70500114632 /* CampaignsViewController.swift */; };
 		CBF4B6FF1F240AB500114632 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4B6FE1F240AB500114632 /* MenuCollectionViewCell.swift */; };
@@ -83,6 +84,9 @@
 		CB9C39381F3B862500EFFD62 /* Cause.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cause.swift; sourceTree = "<group>"; };
 		CBD475231F230804006E3A08 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		CBD475251F230F52006E3A08 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		CBDB40441F40C109006E25EA /* GivDapps-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GivDapps-Bridging-Header.h"; sourceTree = "<group>"; };
+		CBDB40451F40C109006E25EA /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		CBDB40461F40C109006E25EA /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		CBE6B3BD1F292C9D00909B03 /* Slide4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slide4ViewController.swift; sourceTree = "<group>"; };
 		CBF4B6F61F23E70500114632 /* CampaignsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignsViewController.swift; sourceTree = "<group>"; };
 		CBF4B6FE1F240AB500114632 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 				CB1B22F61F2D3F6000D49BB5 /* CampaignCell.swift */,
 				CB3FA2CC1F35649D003728D5 /* GoogleService-Info.plist */,
 				CB7C15521F3A4C7800441CC9 /* DummyCauseViewController.swift */,
+				CBDB40431F40C0D5006E25EA /* Supporting Files */,
 			);
 			path = GivDapps;
 			sourceTree = "<group>";
@@ -196,6 +201,16 @@
 				CB8604421F2031A700041FDF /* Info.plist */,
 			);
 			path = GivDappsUITests;
+			sourceTree = "<group>";
+		};
+		CBDB40431F40C0D5006E25EA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CBDB40451F40C109006E25EA /* SWRevealViewController.h */,
+				CBDB40461F40C109006E25EA /* SWRevealViewController.m */,
+				CBDB40441F40C109006E25EA /* GivDapps-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		CBF4B6F81F23FC6700114632 /* View */ = {
@@ -309,6 +324,7 @@
 					CB86041A1F2031A700041FDF = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = F7VAV7GQ54;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					CB8604301F2031A700041FDF = {
@@ -527,6 +543,7 @@
 				CBD475261F230F52006E3A08 /* ForgotPasswordViewController.swift in Sources */,
 				CB7C15531F3A4C7800441CC9 /* DummyCauseViewController.swift in Sources */,
 				CB45C33E1F36BC720012219E /* User.swift in Sources */,
+				CBDB40471F40C109006E25EA /* SWRevealViewController.m in Sources */,
 				CB9C39391F3B862500EFFD62 /* Cause.swift in Sources */,
 				CB8604511F203C2400041FDF /* SignUpViewController.swift in Sources */,
 				CB86044F1F20328300041FDF /* ViewController.swift in Sources */,
@@ -681,11 +698,14 @@
 			baseConfigurationReference = F4314528870718C24EC7DE55 /* Pods-GivDapps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = F7VAV7GQ54;
 				INFOPLIST_FILE = GivDapps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.givdapps.GivDapps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GivDapps/GivDapps-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -695,11 +715,13 @@
 			baseConfigurationReference = C0E72298DAB5BF8AF90F2C3D /* Pods-GivDapps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = F7VAV7GQ54;
 				INFOPLIST_FILE = GivDapps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.givdapps.GivDapps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GivDapps/GivDapps-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
