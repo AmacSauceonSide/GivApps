@@ -47,12 +47,9 @@ class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICol
     var campaings = [Cause]()
     
     
-    //@IBOutlet weak var menuView: UIView!
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
-    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+
     
     var displayMenu:Bool = false
 
@@ -113,8 +110,6 @@ class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICol
         
         
     }
-    
-    
     
     
     
