@@ -33,6 +33,8 @@ class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICol
         
         menu.target = self.revealViewController()
         menu.action = Selector("revealToggle:")
+        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,16 +42,9 @@ class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICol
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
     var ref:DatabaseReference!
     
     var campaings = [Cause]()
-    
-    
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-
     
     var displayMenu:Bool = false
 
@@ -135,6 +130,7 @@ class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICol
         switch collectionView {
             
         case campaignCollectionView:
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CampaignCell", for: indexPath) as! CampaignCollectionViewCell
             
             if(campaings.count > 0){

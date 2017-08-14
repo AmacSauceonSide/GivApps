@@ -17,6 +17,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         //self.hideKeyboardWhenDone()
         emailTF.delegate = self
         passwordTF.delegate = self
+        activityIndicator.isHidden = false
+        activityIndicator.hidesWhenStopped = true
         // Do any additional setup after loading the view.
     }
 
@@ -29,9 +31,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var passwordTF: UITextField!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     @IBAction func signIn(_ sender: UIButton) {
-        signInUser(emailTextField: emailTF, passwordTextField: passwordTF)
+        signInUser(emailTextField: emailTF, passwordTextField: passwordTF, activityInd: activityIndicator)
     }
     
     
@@ -46,7 +50,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
 
     
-    func signInUser(emailTextField: UITextField, passwordTextField: UITextField) {
+    func signInUser(emailTextField: UITextField, passwordTextField: UITextField, activityInd: UIActivityIndicatorView) {
+        
+        activityIndicator.startAnimating()
         
         guard let userEmail:String = emailTextField.text, let userPassword:String = passwordTextField.text else {
             return
@@ -54,16 +60,33 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
 
         Auth.auth().signIn(withEmail: userEmail, password: userPassword, completion: { (user,error) in
+            
             if(error != nil){
+                
                 print(error?.localizedDescription ?? "Error signing in")
+                
+                //  If user provides invalid log in credentials or there is problem, then alert the user.
+                let alert = UIAlertController(title:"Ooops", message: "Check your log in credentials or try again later.", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title:"OK", style: .cancel,handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
+                
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                }
+                
             }
             else{
+                
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                }
+                
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let viewController = storyboard.instantiateViewController(withIdentifier: "RevealView")
                 self.present(viewController, animated: true, completion: nil)
-                /*let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let viewController = storyboard.instantiateViewController(withIdentifier: "UserProfileView")
-                self.present(viewController, animated: true, completion: nil)*/
+                
             }
         })
         
