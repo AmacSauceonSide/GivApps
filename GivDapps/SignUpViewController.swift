@@ -226,8 +226,10 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate,UIIm
     func registerUser(firstN: UITextField, lastN: UITextField, email: UITextField, password: UITextField){
         
         //  Indicate an operation is taking place behind the scenes.
-        self.activityIndicator.isHidden = false
         self.activityIndicator.startAnimating()
+        
+        //  Ignore any tapping that the user makes while this process occurs.
+        UIApplication.shared.beginIgnoringInteractionEvents()
         
         //  User's basic info.
         guard let userFirstN:String = firstN.text, let userLastN:String = lastN.text else {
@@ -241,8 +243,24 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate,UIIm
         
         //  Create new user in the Firebase
         Auth.auth().createUser(withEmail: userEmail, password: userPassword, completion: { (user, error) in
+            
             if error != nil{
                 print(error!.localizedDescription)
+                
+                //  If there's an error resgistering the user, then alert the user.
+                let alert = UIAlertController(title:"Ooops", message: "We can't register you at the moment. Please try again later.", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title:"OK", style: .cancel,handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
+                
+                DispatchQueue.main.async {
+                    
+                    self.activityIndicator.stopAnimating()
+                    
+                    //  Register any tapping that the user makes when this process finishes.
+                    UIApplication.shared.endIgnoringInteractionEvents()
+                }
 
             }else{
                 
@@ -268,12 +286,14 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate,UIIm
                     }
                     
                 })
-         
+                
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                    
+                    //  Register any tapping that the user makes when this process finishes.
+                    UIApplication.shared.endIgnoringInteractionEvents()
+                }
 
-            }
-            
-            DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()
             }
             
         })

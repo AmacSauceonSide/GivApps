@@ -17,7 +17,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         //self.hideKeyboardWhenDone()
         emailTF.delegate = self
         passwordTF.delegate = self
-        activityIndicator.isHidden = false
+        activityIndicator.isHidden = true
         activityIndicator.hidesWhenStopped = true
         // Do any additional setup after loading the view.
     }
@@ -52,13 +52,16 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     func signInUser(emailTextField: UITextField, passwordTextField: UITextField, activityInd: UIActivityIndicatorView) {
         
+        //  Indicate an operation is taking place behind the scenes.
         activityIndicator.startAnimating()
+        
+        //  Ignore any tapping that the user makes while this process occurs.
+        UIApplication.shared.beginIgnoringInteractionEvents()
         
         guard let userEmail:String = emailTextField.text, let userPassword:String = passwordTextField.text else {
             return
         }
         
-
         Auth.auth().signIn(withEmail: userEmail, password: userPassword, completion: { (user,error) in
             
             if(error != nil){
@@ -74,6 +77,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 
                 DispatchQueue.main.async {
                     self.activityIndicator.stopAnimating()
+                    
+                    //  Register any tapping that the user makes when this process finishes.
+                    UIApplication.shared.endIgnoringInteractionEvents()
                 }
                 
             }
@@ -81,6 +87,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 
                 DispatchQueue.main.async {
                     self.activityIndicator.stopAnimating()
+                    
+                    //  Register any tapping that the user makes when this process finishes.
+                    UIApplication.shared.endIgnoringInteractionEvents()
                 }
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
