@@ -74,10 +74,6 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
                 
                 self.present(alert, animated: true, completion: nil)
                 
-                /*let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let controller = storyboard.instantiateViewController(withIdentifier: "LogInView")
-                self.present(controller, animated: true, completion: nil)*/
-                
                 self.activityIndicator.stopAnimating()
                 
                 //  Register any tapping that the user makes when this process finishes.

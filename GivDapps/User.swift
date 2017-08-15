@@ -16,6 +16,7 @@ class User{
     var email:String? = nil
     var foundationName:String? = nil
     var userType:String? = nil
+    var profileImgURL:String?
     
     init(firstN:String, lastN:String, email:String) {
         self.firstName = firstN
@@ -27,7 +28,8 @@ class User{
         return [
             "First_Name": firstName! as AnyObject,
             "Last_Name":lastName! as AnyObject,
-            "Email":email! as AnyObject
+            "Email":email! as AnyObject,
+            "ProfileIMGURL":profileImgURL as AnyObject
         ]
     }
     

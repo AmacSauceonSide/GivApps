@@ -12,6 +12,7 @@
 		CB0AB2C81F3900DD00DEAB75 /* InNeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0AB2C71F3900DD00DEAB75 /* InNeedViewController.swift */; };
 		CB1B22F51F2D393600D49BB5 /* CampaignCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B22F41F2D393600D49BB5 /* CampaignCollectionViewCell.swift */; };
 		CB1B22F71F2D3F6000D49BB5 /* CampaignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B22F61F2D3F6000D49BB5 /* CampaignCell.swift */; };
+		CB2173B01F42AF1600F1CB17 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2173AF1F42AF1600F1CB17 /* Extensions.swift */; };
 		CB3FA2CD1F35649D003728D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB3FA2CC1F35649D003728D5 /* GoogleService-Info.plist */; };
 		CB45C33E1F36BC720012219E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB45C33D1F36BC720012219E /* User.swift */; };
 		CB7C15531F3A4C7800441CC9 /* DummyCauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7C15521F3A4C7800441CC9 /* DummyCauseViewController.swift */; };
@@ -64,6 +65,7 @@
 		CB0AB2C71F3900DD00DEAB75 /* InNeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InNeedViewController.swift; sourceTree = "<group>"; };
 		CB1B22F41F2D393600D49BB5 /* CampaignCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignCollectionViewCell.swift; sourceTree = "<group>"; };
 		CB1B22F61F2D3F6000D49BB5 /* CampaignCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignCell.swift; sourceTree = "<group>"; };
+		CB2173AF1F42AF1600F1CB17 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CB3FA2CC1F35649D003728D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB45C33D1F36BC720012219E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB7C15521F3A4C7800441CC9 /* DummyCauseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyCauseViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CB2173AE1F42AF0500F1CB17 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CB2173AF1F42AF1600F1CB17 /* Extensions.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		CB45C33C1F36BC580012219E /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +180,7 @@
 		CB86041D1F2031A700041FDF /* GivDapps */ = {
 			isa = PBXGroup;
 			children = (
+				CB2173AE1F42AF0500F1CB17 /* Helpers */,
 				CB45C33C1F36BC580012219E /* Model */,
 				CBF4B6F81F23FC6700114632 /* View */,
 				CBF4B6FB1F23FC8900114632 /* Controller */,
@@ -178,7 +189,6 @@
 				CB8604271F2031A700041FDF /* Assets.xcassets */,
 				CB8604291F2031A700041FDF /* LaunchScreen.storyboard */,
 				CB86042C1F2031A700041FDF /* Info.plist */,
-				CBF4B6FE1F240AB500114632 /* MenuCollectionViewCell.swift */,
 				CB1B22F61F2D3F6000D49BB5 /* CampaignCell.swift */,
 				CB3FA2CC1F35649D003728D5 /* GoogleService-Info.plist */,
 				CB7C15521F3A4C7800441CC9 /* DummyCauseViewController.swift */,
@@ -219,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				CB1B22F41F2D393600D49BB5 /* CampaignCollectionViewCell.swift */,
+				CBF4B6FE1F240AB500114632 /* MenuCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -536,6 +547,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB1B22F51F2D393600D49BB5 /* CampaignCollectionViewCell.swift in Sources */,
+				CB2173B01F42AF1600F1CB17 /* Extensions.swift in Sources */,
 				CBF4B6F71F23E70500114632 /* CampaignsViewController.swift in Sources */,
 				CB9462851F28454500597004 /* SlidesPageViewController.swift in Sources */,
 				CB0AB2C81F3900DD00DEAB75 /* InNeedViewController.swift in Sources */,

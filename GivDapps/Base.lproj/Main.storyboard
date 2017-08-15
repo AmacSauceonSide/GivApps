@@ -769,11 +769,11 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DDR-YF-Yty" id="Oag-BW-qHx">
-                                            <rect key="frame" x="0.0" y="0.0" width="310" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LEW-ru-5Ta">
-                                                    <rect key="frame" x="15" y="0.0" width="293" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="293" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -812,6 +812,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="profileImage" destination="Ril-Qo-se4" id="aUz-tx-LAb"/>
                         <outlet property="tableView" destination="1Bb-at-NBb" id="g2T-Ea-T0s"/>
                     </connections>
                 </viewController>

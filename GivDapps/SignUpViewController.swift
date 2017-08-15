@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 import FirebaseAuth
+import FirebaseStorage
+
 
 class SignUpViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate{
     
@@ -156,12 +158,18 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate,UIIm
     
     /*  Functions from delegates - Start */
     
+    var img:UIImage? = UIImage(named: "blank_profile_pic")
+    
     //  Function to perform operations, such as choosing the profile picture, once an image is selected.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         let theInfo:NSDictionary = info as NSDictionary
         
-        let img:UIImage = theInfo.object(forKey: UIImagePickerControllerOriginalImage) as! UIImage
+        if let currentImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            img = currentImage
+        }
+        
+        //img = theInfo.object(forKey: UIImagePickerControllerOriginalImage) as? UIImage
         
         profileImage.image = img
         
@@ -264,8 +272,57 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate,UIIm
 
             }else{
                 
+                //Testing
+                let imgUUID = NSUUID().uuidString
+                let storage = Storage.storage().reference().child("profilePic").child("\(imgUUID).png")
+                
+                if let uploadData = UIImagePNGRepresentation(self.img!){
+                    storage.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                        if error != nil{
+                            print(error.debugDescription)
+                            return
+                        }
+                        if let profileImageURL = metadata?.downloadURL()?.absoluteString {
+                            
+                            let newUser = User(firstN: userFirstN, lastN: userLastN, email: userEmail)
+                            newUser.profileImgURL = profileImageURL
+                            
+                            guard let uid = user?.uid else{
+                                return
+                            }
+                            
+                            let userReference = self.ref.child("User").child(uid)
+                            
+                            userReference.updateChildValues(newUser.basicUserInfo, withCompletionBlock:{ (error, ref) in
+                                if (error != nil){
+                                    print(error?.localizedDescription ?? "Error Saving user data")
+                                }
+                                else{
+                                    print("\nUser Profile Successfully created\n")
+                                    
+                                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                    let controller = storyboard.instantiateViewController(withIdentifier: "LogInView")
+                                    self.present(controller, animated: true, completion: nil)
+                                }
+                                
+                            })
+                            
+                            DispatchQueue.main.async {
+                                self.activityIndicator.stopAnimating()
+                                
+                                //  Register any tapping that the user makes when this process finishes.
+                                UIApplication.shared.endIgnoringInteractionEvents()
+                            }
+                        }
+                    })
+                }
+                
+                //End testing
+                
                 //  Register new user with a user id
-                guard let uid = user?.uid else{
+                
+                //  Does work, deleted for testing only -- Start
+                /*guard let uid = user?.uid else{
                     return
                 }
                 
@@ -292,7 +349,8 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate,UIIm
                     
                     //  Register any tapping that the user makes when this process finishes.
                     UIApplication.shared.endIgnoringInteractionEvents()
-                }
+                }*/
+                //  Does work, deleted for testing only -- End
 
             }
             

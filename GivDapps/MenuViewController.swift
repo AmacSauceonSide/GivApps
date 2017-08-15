@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import FirebaseStorage
 import FirebaseAuth
 
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+  
+        profileImage.loadIMG(URL_String: "https://firebasestorage.googleapis.com/v0/b/givdappsfirebase.appspot.com/o/profilePic%2FD065411D-5EE0-4ED1-811F-175859A7170C.png?alt=media&token=a4099920-53f8-44e8-a4b8-32fdc027eaaf")
+        
+        print("Menu fired")
         // Do any additional setup after loading the view.
     }
 
@@ -21,9 +25,12 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     
     @IBOutlet var tableView: UITableView!
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    
     
     lazy var settingArray:[String] = {
         return ["Account", "About"]
@@ -67,6 +74,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         print("You selected some row!")
     }
 
+    
+    
     /*
     // MARK: - Navigation
 
