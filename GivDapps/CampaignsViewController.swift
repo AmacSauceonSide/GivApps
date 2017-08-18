@@ -12,7 +12,7 @@ import Firebase
 
 
 
-class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, GivDappsUserDelegate{
     
     
     override func viewDidLoad() {
@@ -34,13 +34,14 @@ class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICol
         menu.target = self.revealViewController()
         menu.action = Selector("revealToggle:")
         
-
+        print(user?.email ?? "didn't get an email")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     var ref:DatabaseReference!
     
@@ -53,6 +54,9 @@ class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICol
     
     @IBOutlet var menu: UIBarButtonItem!
     
+    //test
+    var user: User?
+    //end test
     
     /*@IBAction func menu(_ sender: UIBarButtonItem) {
         
@@ -216,17 +220,21 @@ class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICol
     
     
     // MARK: - Navigation
-    /*(
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if(segue.identifier == "CauseDetailsSegue"){
+        if(segue.identifier == "LogInSegue"){
             
-            if let vc = segue.destination as? InNeedViewController{
+            
+            let sendingVC:SignInViewController = segue.destination as! SignInViewController
+            sendingVC.delegate = self
+            
+            /*if let vc = segue.destination as? InNeedViewController{
                 vc.descriptionTV.textColor = UIColor.red
-            }
+            }*/
             
             
 
@@ -251,7 +259,7 @@ class CampaignsViewController: UIViewController, UICollectionViewDelegate, UICol
             let selectedRow*/
             
         }
-    }*/
+    }
     
     func calculateDaysLeft(date1: String, date2:String) ->Int {
         

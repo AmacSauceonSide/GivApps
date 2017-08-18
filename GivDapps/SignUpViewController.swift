@@ -56,10 +56,10 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate,UIIm
     
     //  Action to add a profile pic when the plus symbol is tapped on.
     @IBAction func addProfilePic(_ sender: UIButton) {
-        print("Add image button pressed")
+        
         let alertController = UIAlertController(title: "Choose image", message: nil, preferredStyle: .actionSheet)
         
-        alertController.addAction(UIAlertAction(title: "Photos", style: .default, handler: { (action) -> Void in
+        alertController.addAction(UIAlertAction(title: "Camera Roll", style: .default, handler: { (action) -> Void in
             self.showPicker(sourceType: .photoLibrary)
         }))
         
@@ -158,7 +158,7 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate,UIIm
     
     /*  Functions from delegates - Start */
     
-    var img:UIImage? = UIImage(named: "blank_profile_pic")
+    var img:UIImage? //= UIImage(named: "blank_profile_pic")
     
     //  Function to perform operations, such as choosing the profile picture, once an image is selected.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -273,49 +273,131 @@ class SignUpViewController: UIViewController,UINavigationControllerDelegate,UIIm
             }else{
                 
                 //Testing
-                let imgUUID = NSUUID().uuidString
-                let storage = Storage.storage().reference().child("profilePic").child("\(imgUUID).png")
                 
-                if let uploadData = UIImagePNGRepresentation(self.img!){
-                    storage.putData(uploadData, metadata: nil, completion: { (metadata, error) in
-                        if error != nil{
-                            print(error.debugDescription)
+                
+                switch self.img {
+                    case nil:
+                        
+                        guard let uid = user?.uid else{
                             return
                         }
-                        if let profileImageURL = metadata?.downloadURL()?.absoluteString {
-                            
-                            let newUser = User(firstN: userFirstN, lastN: userLastN, email: userEmail)
-                            newUser.profileImgURL = profileImageURL
-                            
-                            guard let uid = user?.uid else{
-                                return
+                        
+                        let userReference = self.ref.child("User").child(uid)
+                        
+                        let newUser = User(firstN: userFirstN, lastN: userLastN, email: userEmail, profilePicURL: nil)
+                        userReference.updateChildValues(newUser.basicUserInfo, withCompletionBlock:{ (error, ref) in
+                            if (error != nil){
+                                print(error?.localizedDescription ?? "Error Saving user data")
                             }
-                            
-                            let userReference = self.ref.child("User").child(uid)
-                            
-                            userReference.updateChildValues(newUser.basicUserInfo, withCompletionBlock:{ (error, ref) in
-                                if (error != nil){
-                                    print(error?.localizedDescription ?? "Error Saving user data")
-                                }
-                                else{
-                                    print("\nUser Profile Successfully created\n")
-                                    
-                                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                    let controller = storyboard.instantiateViewController(withIdentifier: "LogInView")
-                                    self.present(controller, animated: true, completion: nil)
-                                }
+                            else{
+                                print("\nUser Profile Successfully created\n")
                                 
-                            })
-                            
+                                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                let controller = storyboard.instantiateViewController(withIdentifier: "LogInView")
+                                self.present(controller, animated: true, completion: nil)
+                            }
                             DispatchQueue.main.async {
                                 self.activityIndicator.stopAnimating()
                                 
                                 //  Register any tapping that the user makes when this process finishes.
                                 UIApplication.shared.endIgnoringInteractionEvents()
                             }
+                            
+                        })
+
+                            break
+                    default:
+                        let imgUUID = NSUUID().uuidString
+                        let storage = Storage.storage().reference().child("profilePic").child("\(imgUUID).png")
+                        
+                        if let uploadData = UIImagePNGRepresentation(self.img!){
+                            storage.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                                if error != nil{
+                                    print(error.debugDescription)
+                                    return
+                                }
+                                if let profileImageURL = metadata?.downloadURL()?.absoluteString {
+                                    
+                                    let newUser = User(firstN: userFirstN, lastN: userLastN, email: userEmail, profilePicURL: profileImageURL)
+                                    newUser.profileImgURL = profileImageURL
+                                    
+                                    guard let uid = user?.uid else{
+                                        return
+                                    }
+                                    
+                                    let userReference = self.ref.child("User").child(uid)
+                                    
+                                    userReference.updateChildValues(newUser.basicUserInfo, withCompletionBlock:{ (error, ref) in
+                                        if (error != nil){
+                                            print(error?.localizedDescription ?? "Error Saving user data")
+                                        }
+                                        else{
+                                            print("\nUser Profile Successfully created\n")
+                                            
+                                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                            let controller = storyboard.instantiateViewController(withIdentifier: "LogInView")
+                                            self.present(controller, animated: true, completion: nil)
+                                        }
+                                        
+                                    })
+                                    
+                                    DispatchQueue.main.async {
+                                        self.activityIndicator.stopAnimating()
+                                        
+                                        //  Register any tapping that the user makes when this process finishes.
+                                        UIApplication.shared.endIgnoringInteractionEvents()
+                                    }
+                                }
+                            })
                         }
-                    })
+                            break
+                    
                 }
+                
+                
+//                let imgUUID = NSUUID().uuidString
+//                let storage = Storage.storage().reference().child("profilePic").child("\(imgUUID).png")
+//                
+//                if let uploadData = UIImagePNGRepresentation(self.img!){
+//                    storage.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+//                        if error != nil{
+//                            print(error.debugDescription)
+//                            return
+//                        }
+//                        if let profileImageURL = metadata?.downloadURL()?.absoluteString {
+//                            
+//                            let newUser = User(firstN: userFirstN, lastN: userLastN, email: userEmail, profilePicURL: profileImageURL)
+//                            newUser.profileImgURL = profileImageURL
+//                            
+//                            guard let uid = user?.uid else{
+//                                return
+//                            }
+//                            
+//                            let userReference = self.ref.child("User").child(uid)
+//                            
+//                            userReference.updateChildValues(newUser.basicUserInfo, withCompletionBlock:{ (error, ref) in
+//                                if (error != nil){
+//                                    print(error?.localizedDescription ?? "Error Saving user data")
+//                                }
+//                                else{
+//                                    print("\nUser Profile Successfully created\n")
+//                                    
+//                                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                                    let controller = storyboard.instantiateViewController(withIdentifier: "LogInView")
+//                                    self.present(controller, animated: true, completion: nil)
+//                                }
+//                                
+//                            })
+//                            
+//                            DispatchQueue.main.async {
+//                                self.activityIndicator.stopAnimating()
+//                                
+//                                //  Register any tapping that the user makes when this process finishes.
+//                                UIApplication.shared.endIgnoringInteractionEvents()
+//                            }
+//                        }
+//                    })
+//                }
                 
                 //End testing
                 

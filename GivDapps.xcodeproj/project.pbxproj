@@ -13,6 +13,7 @@
 		CB1B22F51F2D393600D49BB5 /* CampaignCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B22F41F2D393600D49BB5 /* CampaignCollectionViewCell.swift */; };
 		CB1B22F71F2D3F6000D49BB5 /* CampaignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B22F61F2D3F6000D49BB5 /* CampaignCell.swift */; };
 		CB2173B01F42AF1600F1CB17 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2173AF1F42AF1600F1CB17 /* Extensions.swift */; };
+		CB30BBA81F437D0900A25A59 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB30BBA71F437D0900A25A59 /* Delegates.swift */; };
 		CB3FA2CD1F35649D003728D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB3FA2CC1F35649D003728D5 /* GoogleService-Info.plist */; };
 		CB45C33E1F36BC720012219E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB45C33D1F36BC720012219E /* User.swift */; };
 		CB7C15531F3A4C7800441CC9 /* DummyCauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7C15521F3A4C7800441CC9 /* DummyCauseViewController.swift */; };
@@ -66,6 +67,7 @@
 		CB1B22F41F2D393600D49BB5 /* CampaignCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignCollectionViewCell.swift; sourceTree = "<group>"; };
 		CB1B22F61F2D3F6000D49BB5 /* CampaignCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignCell.swift; sourceTree = "<group>"; };
 		CB2173AF1F42AF1600F1CB17 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CB30BBA71F437D0900A25A59 /* Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 		CB3FA2CC1F35649D003728D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB45C33D1F36BC720012219E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB7C15521F3A4C7800441CC9 /* DummyCauseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyCauseViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				CB2173AF1F42AF1600F1CB17 /* Extensions.swift */,
+				CB30BBA71F437D0900A25A59 /* Delegates.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				CB0AB2C81F3900DD00DEAB75 /* InNeedViewController.swift in Sources */,
 				CBF4B6FF1F240AB500114632 /* MenuCollectionViewCell.swift in Sources */,
 				CB1B22F71F2D3F6000D49BB5 /* CampaignCell.swift in Sources */,
+				CB30BBA81F437D0900A25A59 /* Delegates.swift in Sources */,
 				CBE6B3BE1F292C9D00909B03 /* Slide4ViewController.swift in Sources */,
 				CBD475241F230804006E3A08 /* SignInViewController.swift in Sources */,
 				CBD475261F230F52006E3A08 /* ForgotPasswordViewController.swift in Sources */,

@@ -8,7 +8,12 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
+
+//test - start
+var currentUser:User?
+//test - end
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
 
@@ -27,20 +32,29 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    
     @IBOutlet weak var emailTF: UITextField!
     
     @IBOutlet weak var passwordTF: UITextField!
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    //  testing -- start
+    var delegate:GivDappsUserDelegate? = nil
+    //  testing -- end
+    
     
     @IBAction func signIn(_ sender: UIButton) {
+        
         signInUser(emailTextField: emailTF, passwordTextField: passwordTF, activityInd: activityIndicator)
+        
     }
     
     
     
+    
     @IBAction func takeATour(_ sender: UIButton) {
+        
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
         let ViewController = storyBoard.instantiateViewController(withIdentifier: "TourSlidesViewController")
@@ -80,6 +94,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                     
                     //  Register any tapping that the user makes when this process finishes.
                     UIApplication.shared.endIgnoringInteractionEvents()
+                
                 }
                 
             }
@@ -90,23 +105,42 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                     
                     //  Register any tapping that the user makes when this process finishes.
                     UIApplication.shared.endIgnoringInteractionEvents()
+                    
+                    // Test (1) - start
+                    let ref = Database.database().reference().child("User").child((user?.uid)!).observe(.value, with: {
+                        snapshot in
+                        
+                        currentUser = User(snapshot: snapshot)
+                        
+                        // Test (2) - start
+                        if self.delegate != nil{
+                            self.delegate?.user = currentUser
+                        }
+                        // Test (2) - end
+                        
+                    })
+                    // Test (1) - end
+                    
+
                 }
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let viewController = storyboard.instantiateViewController(withIdentifier: "RevealView")
                 self.present(viewController, animated: true, completion: nil)
+
                 
             }
         })
         
     }
-    /*
+    
     // MARK: - Navigation
-
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+
     }
     */
 
@@ -134,10 +168,3 @@ extension UIViewController{
 }
 
 
-/*extension UITextField:UITextFieldDelegate{
-    
-    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.endEditing(true)
-        return false
-    }
-}*/

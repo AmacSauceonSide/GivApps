@@ -436,7 +436,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WU8-ea-9Tl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1708" y="788"/>
+            <point key="canvasLocation" x="1670" y="788"/>
         </scene>
         <!--Slides Page View Controller-->
         <scene sceneID="kdZ-Xg-3uc">
@@ -769,11 +769,11 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DDR-YF-Yty" id="Oag-BW-qHx">
-                                            <rect key="frame" x="0.0" y="0.0" width="310" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LEW-ru-5Ta">
-                                                    <rect key="frame" x="15" y="0.0" width="293" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="293" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -794,13 +794,22 @@
                                     <constraint firstAttribute="width" constant="20" id="nSM-9w-ars"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="add_symbol"/>
+                                <connections>
+                                    <action selector="addProfilePic:" destination="Z1Z-Hn-pdU" eventType="touchUpInside" id="LEy-eQ-26G"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sAa-fR-GnV">
+                                <rect key="frame" x="135" y="113" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="sAa-fR-GnV" firstAttribute="top" secondItem="d6L-Vj-ePY" secondAttribute="bottom" constant="93" id="8RP-cP-Jl9"/>
                             <constraint firstItem="1Bb-at-NBb" firstAttribute="leading" secondItem="p4c-FH-eOR" secondAttribute="leading" id="C2I-O3-n97"/>
                             <constraint firstItem="1Bb-at-NBb" firstAttribute="top" secondItem="Ril-Qo-se4" secondAttribute="bottom" constant="8" id="Gcg-zN-ADk"/>
                             <constraint firstItem="1Bb-at-NBb" firstAttribute="top" secondItem="tZV-9b-3Ou" secondAttribute="bottom" constant="110" id="HX4-H4-vaY"/>
+                            <constraint firstItem="sAa-fR-GnV" firstAttribute="leading" secondItem="jhm-Yo-kSY" secondAttribute="leadingMargin" constant="119" id="OPa-3H-Pi6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sAa-fR-GnV" secondAttribute="trailing" constant="204" id="acM-cP-5gJ"/>
                             <constraint firstAttribute="leadingMargin" secondItem="p4c-FH-eOR" secondAttribute="leading" id="awz-3x-Rjf"/>
                             <constraint firstItem="Ril-Qo-se4" firstAttribute="top" secondItem="d6L-Vj-ePY" secondAttribute="bottom" constant="42" id="eJ5-vY-36c"/>
                             <constraint firstItem="tZV-9b-3Ou" firstAttribute="leading" secondItem="Ril-Qo-se4" secondAttribute="trailing" constant="8" id="gd5-VE-qNJ"/>
@@ -809,16 +818,18 @@
                             <constraint firstItem="1Bb-at-NBb" firstAttribute="centerX" secondItem="jhm-Yo-kSY" secondAttribute="centerX" id="pmh-1O-48p"/>
                             <constraint firstAttribute="bottom" secondItem="1Bb-at-NBb" secondAttribute="bottom" constant="20" symbolic="YES" id="rWl-pC-CAI"/>
                             <constraint firstItem="p4c-FH-eOR" firstAttribute="top" secondItem="d6L-Vj-ePY" secondAttribute="bottom" constant="8" id="yOM-5V-eby"/>
+                            <constraint firstItem="1Bb-at-NBb" firstAttribute="top" secondItem="sAa-fR-GnV" secondAttribute="bottom" constant="59" id="zTc-ay-dT1"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="sAa-fR-GnV" id="sOr-gw-05z"/>
                         <outlet property="profileImage" destination="Ril-Qo-se4" id="aUz-tx-LAb"/>
                         <outlet property="tableView" destination="1Bb-at-NBb" id="g2T-Ea-T0s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXT-NV-LZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3152.8000000000002" y="787.55622188905556"/>
+            <point key="canvasLocation" x="3153" y="788"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f3b-yc-n8Y">

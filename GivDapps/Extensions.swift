@@ -20,7 +20,8 @@ extension UIImageView {
 
     func loadIMG(URL_String: String){
         
-        self.image = nil
+        //self.image = nil
+        self.image = UIImage(named: "blank_profile_pic")
         
         //  Check if image exists in cache first
         if let cachedImage = imgCache.object(forKey: URL_String as NSString) as? UIImage{
