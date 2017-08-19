@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+/*  It seems like this ViewController is not being used. Just leave it for now.*/
 class ViewController: UIViewController {
 
     override func viewDidLoad() {

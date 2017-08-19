@@ -11,22 +11,33 @@ import Foundation
 //  Class Cause - defines the attributes and behavior for the causes that exist in the database.
 class Cause{
     
-    //  Cause attributes
+    /* All of the user's attributes -- Start*/
     var causeName:String?
+    
     var nonProfit:String?
+    
     var description:String?
+    
     var userName:String?
+    
     var category:String?
+    
     var totalGoal:Double?
+    
     var timeStart:String?
+    
     var timeEnd:String?
+    
     var remaining:Double?
+    
     var nOfDonors:Int?
+    /* All of the user's attributes -- End*/
     
     
     
     //  Function to compose a cause with the information retrieved from Firebase. Using a dict as a parameter.
     func composeCause(valueDict: [String:Any]) {
+        
         self.causeName = valueDict["Name"] as? String
         self.nonProfit = valueDict["NonProfit"] as? String
         self.description = valueDict["Description"] as? String
@@ -37,5 +48,6 @@ class Cause{
         self.timeEnd = valueDict["Time_End"] as? String
         self.remaining = valueDict["Remaining"] as? Double
         self.nOfDonors = valueDict["Donors"] as? Int
+        
     }
 }

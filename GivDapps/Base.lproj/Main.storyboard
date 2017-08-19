@@ -830,7 +830,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GXT-NV-LZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3153" y="788"/>
+            <point key="canvasLocation" x="3153" y="875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f3b-yc-n8Y">
@@ -894,7 +894,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWR-Sj-GKg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWR-Sj-GKg">
                                 <rect key="frame" x="224.5" y="296" width="27" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -985,7 +985,7 @@
                             <constraint firstItem="oWR-Sj-GKg" firstAttribute="height" secondItem="sX5-Q6-Uz3" secondAttribute="height" id="jCE-qq-VlF"/>
                             <constraint firstItem="1Sk-TO-zgx" firstAttribute="leading" secondItem="MWg-ym-Hun" secondAttribute="trailing" constant="8" symbolic="YES" id="jPb-A0-49M"/>
                             <constraint firstItem="oWR-Sj-GKg" firstAttribute="top" secondItem="MAt-Oy-qO6" secondAttribute="bottom" constant="54" id="jXR-jb-GDh"/>
-                            <constraint firstItem="oWR-Sj-GKg" firstAttribute="width" secondItem="sX5-Q6-Uz3" secondAttribute="width" constant="3.5" id="lbf-gE-dZb"/>
+                            <constraint firstItem="oWR-Sj-GKg" firstAttribute="width" secondItem="sX5-Q6-Uz3" secondAttribute="width" constant="7" id="lbf-gE-dZb"/>
                             <constraint firstItem="KmE-Ud-Fjl" firstAttribute="top" secondItem="MAt-Oy-qO6" secondAttribute="bottom" constant="53" id="lwd-Yi-cHY"/>
                             <constraint firstItem="I6P-Xf-9iv" firstAttribute="centerX" secondItem="MAt-Oy-qO6" secondAttribute="centerX" id="oyf-mr-lf0"/>
                             <constraint firstItem="85R-Ef-1SY" firstAttribute="height" secondItem="MWg-ym-Hun" secondAttribute="height" id="r1R-fk-a56"/>

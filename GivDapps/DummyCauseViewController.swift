@@ -39,7 +39,7 @@ class DummyCauseViewController: UIViewController {
     
     @IBAction func save(_ sender: UIButton) {
         
-        var values:[String:AnyObject] = [
+        let values:[String:AnyObject] = [
             "Name": causeNameTF.text as AnyObject,
             "Category" : categoryTF.text as AnyObject,
             "Description" : descriptionTF.text as AnyObject,

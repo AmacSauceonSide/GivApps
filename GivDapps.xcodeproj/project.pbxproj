@@ -11,9 +11,7 @@
 		B707F9FF933C75C77FFD512D /* Pods_GivDappsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73FF32D8CAEEF465AB5AE405 /* Pods_GivDappsTests.framework */; };
 		CB0AB2C81F3900DD00DEAB75 /* InNeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0AB2C71F3900DD00DEAB75 /* InNeedViewController.swift */; };
 		CB1B22F51F2D393600D49BB5 /* CampaignCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B22F41F2D393600D49BB5 /* CampaignCollectionViewCell.swift */; };
-		CB1B22F71F2D3F6000D49BB5 /* CampaignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B22F61F2D3F6000D49BB5 /* CampaignCell.swift */; };
 		CB2173B01F42AF1600F1CB17 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2173AF1F42AF1600F1CB17 /* Extensions.swift */; };
-		CB30BBA81F437D0900A25A59 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB30BBA71F437D0900A25A59 /* Delegates.swift */; };
 		CB3FA2CD1F35649D003728D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB3FA2CC1F35649D003728D5 /* GoogleService-Info.plist */; };
 		CB45C33E1F36BC720012219E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB45C33D1F36BC720012219E /* User.swift */; };
 		CB7C15531F3A4C7800441CC9 /* DummyCauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7C15521F3A4C7800441CC9 /* DummyCauseViewController.swift */; };
@@ -33,7 +31,6 @@
 		CBDB40491F40CF60006E25EA /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBDB40481F40CF60006E25EA /* MenuViewController.swift */; };
 		CBE6B3BE1F292C9D00909B03 /* Slide4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE6B3BD1F292C9D00909B03 /* Slide4ViewController.swift */; };
 		CBF4B6F71F23E70500114632 /* CampaignsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4B6F61F23E70500114632 /* CampaignsViewController.swift */; };
-		CBF4B6FF1F240AB500114632 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4B6FE1F240AB500114632 /* MenuCollectionViewCell.swift */; };
 		D399671ABF187335E79A1848 /* Pods_GivDappsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72ABB1A38BF721E1ED719627 /* Pods_GivDappsUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,9 +62,7 @@
 		C0E72298DAB5BF8AF90F2C3D /* Pods-GivDapps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GivDapps.release.xcconfig"; path = "Pods/Target Support Files/Pods-GivDapps/Pods-GivDapps.release.xcconfig"; sourceTree = "<group>"; };
 		CB0AB2C71F3900DD00DEAB75 /* InNeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InNeedViewController.swift; sourceTree = "<group>"; };
 		CB1B22F41F2D393600D49BB5 /* CampaignCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignCollectionViewCell.swift; sourceTree = "<group>"; };
-		CB1B22F61F2D3F6000D49BB5 /* CampaignCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignCell.swift; sourceTree = "<group>"; };
 		CB2173AF1F42AF1600F1CB17 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		CB30BBA71F437D0900A25A59 /* Delegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 		CB3FA2CC1F35649D003728D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB45C33D1F36BC720012219E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB7C15521F3A4C7800441CC9 /* DummyCauseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyCauseViewController.swift; sourceTree = "<group>"; };
@@ -95,7 +90,6 @@
 		CBDB40481F40CF60006E25EA /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		CBE6B3BD1F292C9D00909B03 /* Slide4ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slide4ViewController.swift; sourceTree = "<group>"; };
 		CBF4B6F61F23E70500114632 /* CampaignsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignsViewController.swift; sourceTree = "<group>"; };
-		CBF4B6FE1F240AB500114632 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		F4314528870718C24EC7DE55 /* Pods-GivDapps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GivDapps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GivDapps/Pods-GivDapps.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				CB2173AF1F42AF1600F1CB17 /* Extensions.swift */,
-				CB30BBA71F437D0900A25A59 /* Delegates.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -192,7 +185,6 @@
 				CB8604271F2031A700041FDF /* Assets.xcassets */,
 				CB8604291F2031A700041FDF /* LaunchScreen.storyboard */,
 				CB86042C1F2031A700041FDF /* Info.plist */,
-				CB1B22F61F2D3F6000D49BB5 /* CampaignCell.swift */,
 				CB3FA2CC1F35649D003728D5 /* GoogleService-Info.plist */,
 				CB7C15521F3A4C7800441CC9 /* DummyCauseViewController.swift */,
 				CBDB40431F40C0D5006E25EA /* Supporting Files */,
@@ -232,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				CB1B22F41F2D393600D49BB5 /* CampaignCollectionViewCell.swift */,
-				CBF4B6FE1F240AB500114632 /* MenuCollectionViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -554,9 +545,6 @@
 				CBF4B6F71F23E70500114632 /* CampaignsViewController.swift in Sources */,
 				CB9462851F28454500597004 /* SlidesPageViewController.swift in Sources */,
 				CB0AB2C81F3900DD00DEAB75 /* InNeedViewController.swift in Sources */,
-				CBF4B6FF1F240AB500114632 /* MenuCollectionViewCell.swift in Sources */,
-				CB1B22F71F2D3F6000D49BB5 /* CampaignCell.swift in Sources */,
-				CB30BBA81F437D0900A25A59 /* Delegates.swift in Sources */,
 				CBE6B3BE1F292C9D00909B03 /* Slide4ViewController.swift in Sources */,
 				CBD475241F230804006E3A08 /* SignInViewController.swift in Sources */,
 				CBD475261F230F52006E3A08 /* ForgotPasswordViewController.swift in Sources */,

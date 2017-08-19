@@ -55,9 +55,11 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //  User taps on the sign out button.
     @IBAction func signOut(_ sender: UIButton) {
         
+        //  Make sure there's currently a user logged in.
         if Auth.auth().currentUser != nil {
             
             do {
+                
                 //  Sign the user out.
                 try Auth.auth().signOut()
                 
@@ -66,11 +68,12 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 
                 //  Present the LogInView once again.
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInView")
+                
                 present(vc, animated: true, completion: nil)
                 
                 
             } catch let error as NSError {
-                print(error.localizedDescription)
+                print(error.localizedDescription)   //  Might want to add an alert here to notify the user.
             }
             
         }
@@ -104,6 +107,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        //  Instantiate the cells of type UITableViewCell.
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         
         cell.textLabel?.text = settingArray[indexPath.row]
@@ -118,14 +122,17 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     /* UITableView functions -- End */
     
+    
     //  Function to perform operations, such as choosing the profile picture, once an image is selected.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         //  User selects an original image from the camera roll.
         if let currentImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
+            //  Set image equal to currentImge.
             img = currentImage
 
+            //  Change profile image.
             changeProfileImg(user: currentUser, activityInd: activityIndicator)
         }
         
@@ -197,36 +204,60 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //  Function to set a new profile image, assuming that the user does not have a current profile image.
     func setNewProfileImg(activityInd: UIActivityIndicatorView, image: UIImage){
         
+        //  Indicate an operation is taking place behind the scenes.
         activityInd.startAnimating()
         
+        //  Ignore any tapping that the user makes while this process occurs.
         UIApplication.shared.beginIgnoringInteractionEvents()
         
+        //  Create a unique UUID for teh image.
         let imgUUID = NSUUID().uuidString
         
+        //  Storage with a unique UUID reference.
         let storage = Storage.storage().reference().child("profilePic").child("\(imgUUID).png")
         
+        //  Upload the image.
         if let uploadData = UIImagePNGRepresentation(image){
             
+            //  Save the data on the storage.
             storage.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                
+                /*  If there's an error you might want to notify the user with an alert.    */
                 if error != nil{
+                    
                     print(error.debugDescription)
                     return
+                    
                 }
+                
+                /*  Declare and set profileImageURL equal to the downloadURL of the metadata. You'll need this downloadURL to download images from Firebase storage.    */
                 if let profileImageURL = metadata?.downloadURL()?.absoluteString {
                     
+                    //  Get the userID.
                     let userID = Auth.auth().currentUser?.uid
                     
+                    //  Reference to the User given the userID.
                     let userReference = Database.database().reference().child("User").child(userID!)
                     
+                    /*  IMPORTANT - This takes control of the user saving images. Leave as is if possible.  */
                     userReference.updateChildValues(["ProfileIMGURL": profileImageURL], withCompletionBlock:{ (error, ref) in
                         
+                        //  Error happened? you might want to notify the user with an alert.
                         if (error != nil){
+                            
+                            //  Stop animating the activityIndicator, the process has finished.
                             self.activityIndicator.stopAnimating()
                             print(error?.localizedDescription ?? "Error Saving user data")
+                            
                         }
                         else{
+                            
+                            //  Stop animating the activityIndicator, the process has finished.
                             self.activityIndicator.stopAnimating()
+                            
                             print("User's new profile pic uploaded succesfully!")
+                            
+                            //  Set the image of the profileImage equals to the image.
                             self.profileImage.image = image
                             
                         }
@@ -234,6 +265,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     })
                     
                     DispatchQueue.main.async {
+                        
+                        //  Stop animating the activityIndicator, the process has finished.
                         activityInd.stopAnimating()
                         
                         //  Register any tapping that the user makes when this process finishes.
@@ -242,10 +275,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
             })
         }
-        
     }
     
-    
+    /*  IMPORTANT - The deleteAndReplaceProfilePic() plays an important role for changing profile image. It deletes the current image and also stores the new profile image.   */
     //  Function to delete the current profile picture. Also delete the URL reference to that picture from the user.
     func deleteAndReplaceProfilePic(user: User, imgView: UIImageView, image: UIImage,activityInd: UIActivityIndicatorView){
         
@@ -264,8 +296,10 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 //  Alert the user there was an error deleting the profile image.
                 let alert = UIAlertController(title: "Error", message: "There was an error deleting your image. Please try again later.", preferredStyle: .alert)
                 
+                //  Add an OK button to dismiss it.
                 alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
                 
+                //  Present it.
                 self.present(alert, animated: true, completion: nil)
                 
             }
@@ -283,8 +317,10 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
                         //  Also delete the ProfileIMGURL from the user so that there's no reference to the image just deleted.
                         if let uid = Auth.auth().currentUser?.uid{
                             
+                            //  Remove the child ProfileIMGURL and its value from the user. That way it doesn't have a URL pointing to something that does not exist.
                             ref.child("User").child(uid).child("ProfileIMGURL").removeValue(completionBlock: { (error, ref) in
                                 
+                                //  Error happened? you might want to notify the user with an alert.
                                 if error != nil {
                                     print(error?.localizedDescription ?? "Error, perhaps?")
                                 }
@@ -292,7 +328,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
                                     
                                     print("Success!! Image reference also deleted from the user.")
                                     
-                                    //  If everything so far goes well, set the new profile image.
+                                    /*  If everything so far goes well, set the new profile image. This includes saving a new image and ProfileIMGURL with an existing image*/
                                     self.setNewProfileImg(activityInd: activityInd, image: image)
                                 
                                 }
@@ -304,15 +340,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
